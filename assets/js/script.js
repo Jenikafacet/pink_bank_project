@@ -59,11 +59,16 @@ const exchangeRatesItem3Trend = document.querySelector(
 const exchangeRatesErrorMessage = document.querySelector(
     ".exchange-rates__error"
 );
+const exchangeRatesDate = document.querySelector(
+    ".exchange-rates__date"
+);
 fetch("https://www.cbr-xml-daily.ru/daily_json.js")
     .then((response) => {
         return response.json();
     })
     .then((data) => {
+        exchangeRatesDate.textContent =
+            "Обновлено: " + data.Date.slice(0, -15);
         exchangeRatesItem1Value.textContent =
             data.Valute.USD.Value.toFixed(2) + " RUB";
         exchangeRatesItem2Value.textContent =

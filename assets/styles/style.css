@@ -93,6 +93,7 @@ ul {
   grid-column: 1/2;
   color: white;
   background-color: #ff1c8c;
+  padding-left: 5px;
 }
 .exchange-rates__title_value {
   grid-row: 1/2;
@@ -110,6 +111,7 @@ ul {
   grid-row: 2/3;
   grid-column: 1/2;
   border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
 }
 .exchange-rates__item1_value {
   grid-row: 2/3;
@@ -126,6 +128,7 @@ ul {
   grid-row: 3/4;
   grid-column: 1/2;
   border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
 }
 .exchange-rates__item2_value {
   grid-row: 3/4;
@@ -142,6 +145,7 @@ ul {
   grid-row: 4/5;
   grid-column: 1/2;
   border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
 }
 .exchange-rates__item3_value {
   grid-row: 4/5;
@@ -156,4 +160,9 @@ ul {
 }
 .exchange-rates__error {
   color: red;
+}
+.exchange-rates__date {
+  margin-top: 10px;
+  padding-left: 5px;
+  font-size: 12px;
 }
