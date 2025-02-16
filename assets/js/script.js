@@ -236,3 +236,143 @@ fetch("https://www.cbr-xml-daily.ru/daily_json.js")
         exchangeRatesErrorMessage.textContent =
             "Произошла ошибка при загрузке данных";
     });
+
+//Инвестиционный калькулятор
+
+// Находим кнопку и добавляем слушатель события
+document
+    .getElementById("calculate-button")
+    .addEventListener("click", function () {
+        const startPrice = parseFloat(
+            document.getElementById("start-price").value
+        );
+        const currentPrice = parseFloat(
+            document.getElementById("current-price").value
+        );
+        const shares = parseFloat(document.getElementById("shares").value);
+        const dividends =
+            parseFloat(document.getElementById("dividends").value) || 0;
+
+        if (isNaN(startPrice) || isNaN(currentPrice) || isNaN(shares)) {
+            alert("Пожалуйста, заполните все обязательные поля.");
+            return;
+        }
+
+        const initialInvestment = startPrice * shares;
+        const currentInvestment = currentPrice * shares + dividends;
+        const profitLoss = currentInvestment - initialInvestment;
+        const profitLossPercent = (profitLoss / initialInvestment) * 100;
+
+        document.getElementById(
+            "current-value"
+        ).innerHTML = `Текущая стоимость бумаг: <strong>${currentInvestment.toFixed(
+            2
+        )}</strong>`;
+        document.getElementById("profit-loss").innerHTML =
+            profitLoss >= 0
+                ? `Прибыль: <strong>${profitLoss.toFixed(
+                    2
+                )}  (${profitLossPercent.toFixed(2)}%)</strong>`
+                : `Убыток: <strong>${Math.abs(profitLoss).toFixed(
+                    2
+                )}  (${Math.abs(profitLossPercent).toFixed(2)}%)</strong>`;
+
+        // Показываем карточку с результатами
+        document.getElementById("result-card").style.display = "block";
+    });
+//Инвестиционный калькулятор end
+
+//Акция
+// Получаем элементы
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const modal = document.getElementById("modal");
+const callbackForm = document.getElementById("callbackForm");
+const phoneInput = document.getElementById("phone");
+
+// Открытие модального окна
+openModalBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
+
+// Закрытие модального окна
+closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Закрытие модального окна при клике вне его области
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// Валидация номера телефона
+phoneInput.addEventListener("input", (event) => {
+    // Удаляем все символы, кроме цифр
+    event.target.value = event.target.value.replace(/\D/g, "");
+});
+
+// Обработка отправки формы
+callbackForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+    const nameInput = document.getElementById("name");
+    const phoneInput = document.getElementById("phone");
+
+    // Проверка на пустые поля
+    if (nameInput.value.trim() === "" || phoneInput.value.trim() === "") {
+        alert("Пожалуйста, заполните все поля.");
+        return;
+    }
+
+    // Проверка на минимальную длину номера телефона
+    if (phoneInput.value.length < 10) {
+        alert("Номер телефона должен содержать не менее 10 цифр.");
+        return;
+    }
+
+    // Если все проверки пройдены
+    alert("Спасибо, " + nameInput.value + "! Мы скоро с вами свяжемся.");
+    modal.style.display = "none"; // Закрываем модальное окно после отправки
+    callbackForm.reset(); // Очищаем форму
+});
+
+// Счетчик обратного отсчета
+const countdownDate = new Date("2025-03-15T00:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = String(days).padStart(2, "0");
+    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(minutes).padStart(
+        2,
+        "0"
+    );
+    document.getElementById("seconds").innerText = String(seconds).padStart(
+        2,
+        "0"
+    );
+
+    if (distance < 0) {
+        clearInterval(interval);
+        document.getElementById("countdown").innerHTML =
+            "<p>Акция завершена!</p>";
+    }
+}
+
+// Обновляем счетчик каждую секунду
+const interval = setInterval(updateCountdown, 1000);
+
+// Инициализация счетчика сразу после загрузки страницы
+updateCountdown();
+// Акция конец
