@@ -67,7 +67,7 @@ li {
   color: #968e8e;
 }
 
-.newsList_header, .exchange-rates__title {
+.sidebar_header {
   font-size: 24px;
   font-weight: 800;
   padding: 7px 0 7px 5px;
@@ -157,8 +157,8 @@ td.today {
 #btnNext:hover {
   color: #28283b;
   font-weight: bold;
-}/*# sourceMappingURL=style.css.map */
-=======
+}
+
 /* Курсы валют */
 .exchange-rates {
   margin-bottom: 10px;
