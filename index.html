@@ -2,13 +2,32 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
         <title>Pink Bank – Girls Friendly</title>
-        <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg" />
-        <link rel="stylesheet" href="/assets/styles/reset.css" />
-        <link rel="stylesheet" href="/assets/styles/normalize.css" />
-        <link href="assets/styles/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/assets/styles/style.css" />
+        <link
+            rel="shortcut icon"
+            href="/assets/images/favicon.svg"
+            type="image/svg"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/reset.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/normalize.css"
+        />
+        <link
+            href="assets/styles/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/style.css"
+        />
     </head>
     <body>
         <!-- Шапка сайта -->
@@ -27,7 +46,10 @@
                 Girls-friendly Pink Bank<br />
                 ваши финансы - ваши правила!
             </h1>
-            <h2>Подпишись на новости и будь в курсе лучших предложений</h2>
+            <h2>
+                Подпишись на новости и будь в курсе лучших
+                предложений
+            </h2>
             <form></form>
         </div>
         <!-- Основной контент -->
@@ -38,7 +60,10 @@
                 <div id="services">
                     <!-- Услуга 1 -->
                     <div class="service">
-                        <img src="/assets/images/money.png" alt="Услуга 1" />
+                        <img
+                            src="/assets/images/money.png"
+                            alt="Услуга 1"
+                        />
                         <div class="service-content">
                             <h2>Валютные операции</h2>
                             <p>Валютный калькулятор</p>
@@ -48,16 +73,24 @@
 
                     <!-- Услуга 2 -->
                     <div class="service">
-                        <img src="/assets/images/banking.png" alt="Услуга 2" />
+                        <img
+                            src="/assets/images/banking.png"
+                            alt="Услуга 2"
+                        />
                         <div class="service-content">
                             <h2>Инвестиционные продукты</h2>
-                            <p>Инвестиционный калькулятор</p>
+                            <p>
+                                Инвестиционный калькулятор
+                            </p>
                         </div>
                     </div>
 
                     <!-- Услуга 3 -->
                     <div class="service">
-                        <img src="/assets/images/invest.png" alt="Услуга 3" />
+                        <img
+                            src="/assets/images/invest.png"
+                            alt="Услуга 3"
+                        />
                         <div class="service-content">
                             <h2>консультации</h2>
                             <p>закажите консультацию</p>
@@ -69,13 +102,72 @@
             <!-- Сайдбар с правой стороны -->
             <div class="sidebar">
                 <!-- Лента новостей -->
-                <div class="newsList_header"><h2 class="newsList_header">Новости</h2></div>
+                <div class="newsList_header">
+                    <h2 class="newsList_header">Новости</h2>
+                </div>
                 <ul id="newsList"></ul>
 
                 <!-- Курс валют -->
                 <div class="exchange-rates">
-                    <h2>Курс валют</h2>
+                    <h2 class="exchange-rates__title">
+                        Курсы валют
+                    </h2>
+                    <div
+                        class="exchange-rates__error"
+                    ></div>
+                    <div class="exchange-rates__wrapper">
+                        <div
+                            class="exchange-rates__title_name"
+                        >
+                            Валюта
+                        </div>
+                        <div
+                            class="exchange-rates__title_value"
+                        >
+                            Курс
+                        </div>
+                        <div
+                            class="exchange-rates__title_trend"
+                        >
+                            Тренд
+                        </div>
+                        <div
+                            class="exchange-rates__item1_name"
+                        >
+                            USD
+                        </div>
+                        <div
+                            class="exchange-rates__item1_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item1_trend"
+                        ></div>
+                        <div
+                            class="exchange-rates__item2_name"
+                        >
+                            EUR
+                        </div>
+                        <div
+                            class="exchange-rates__item2_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item2_trend"
+                        ></div>
+                        <div
+                            class="exchange-rates__item3_name"
+                        >
+                            GBP
+                        </div>
+                        <div
+                            class="exchange-rates__item3_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item3_trend"
+                        ></div>
+                    </div>
+                    <div class="exchange-rates__date"></div>
                 </div>
+
                 <!-- Календарь инвестора -->
                 <div class="investor-calendar">
                     <h2>Календарь инвестора</h2>
@@ -93,13 +185,20 @@
         </div>
         <!-- Опрос про инвестиции -->
         <div class="poll">
-            <h2>Опрос: опрос может быть любого вида(не обязательно радиобаттоны)</h2>
-            <p>Пожалуйста, ответьте на несколько вопросов:</p>
+            <h2>
+                Опрос: опрос может быть любого вида(не
+                обязательно радиобаттоны)
+            </h2>
+            <p>
+                Пожалуйста, ответьте на несколько вопросов:
+            </p>
             <form></form>
         </div>
         <!-- Подвал -->
         <footer>
-            <p>&copy; 2025 Pink Bank. Все права защищены.</p>
+            <p>
+                &copy; 2025 Pink Bank. Все права защищены.
+            </p>
         </footer>
         <script src="assets/js/script.js"></script>
     </body>

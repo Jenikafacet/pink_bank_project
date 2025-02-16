@@ -67,7 +67,7 @@ li {
   color: #968e8e;
 }
 
-.newsList_header {
+.newsList_header, .exchange-rates__title {
   font-size: 24px;
   font-weight: 800;
   padding: 7px 0 7px 5px;
@@ -158,3 +158,92 @@ td.today {
   color: #28283b;
   font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
+=======
+/* Курсы валют */
+.exchange-rates {
+  margin-bottom: 10px;
+}
+.exchange-rates__wrapper {
+  display: grid;
+  grid-template-rows: repeat 4, 20px;
+  grid-template-columns: repeat 3, 1fr;
+  align-items: start;
+}
+.exchange-rates__title_name {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  color: white;
+  background-color: #ff1c8c;
+  padding-left: 5px;
+}
+.exchange-rates__title_value {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  color: white;
+  background-color: #ff1c8c;
+}
+.exchange-rates__title_trend {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  color: white;
+  background-color: #ff1c8c;
+}
+.exchange-rates__item1_name {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
+}
+.exchange-rates__item1_value {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item1_trend {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  color: green;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item2_name {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
+}
+.exchange-rates__item2_value {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item2_trend {
+  grid-row: 3/4;
+  grid-column: 3/4;
+  color: green;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item3_name {
+  grid-row: 4/5;
+  grid-column: 1/2;
+  border-bottom: 2px solid #968e8e;
+  padding-left: 5px;
+}
+.exchange-rates__item3_value {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item3_trend {
+  grid-row: 4/5;
+  grid-column: 3/4;
+  color: green;
+  border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__error {
+  color: red;
+}
+.exchange-rates__date {
+  margin-top: 10px;
+  padding-left: 5px;
+  font-size: 12px;
+}
