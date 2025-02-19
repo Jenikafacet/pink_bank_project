@@ -37,115 +37,146 @@ fetch(
         newsList.appendChild(newsErr);
     });
 
-    /* JS для календаря */
+/* JS для календаря */
 
-    let Cal = function(divId) {
-        this.divId = divId;
-        this.DaysOfWeek = [
-        'Пн',
-        'Вт',
-        'Ср',
-        'Чт',
-        'Пт',
-        'Сб',
-        'Вс'
-        ];
-        this.Months =['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-        let d = new Date();
-        this.currMonth = d.getMonth();
-        this.currYear = d.getFullYear();
-        this.currDay = d.getDate();
-    };
-    Cal.prototype.nextMonth = function() {
-        if ( this.currMonth == 11 ) {
+let Cal = function (divId) {
+    this.divId = divId;
+    this.DaysOfWeek = [
+        "Пн",
+        "Вт",
+        "Ср",
+        "Чт",
+        "Пт",
+        "Сб",
+        "Вс",
+    ];
+    this.Months = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+    ];
+    let d = new Date();
+    this.currMonth = d.getMonth();
+    this.currYear = d.getFullYear();
+    this.currDay = d.getDate();
+};
+Cal.prototype.nextMonth = function () {
+    if (this.currMonth == 11) {
         this.currMonth = 0;
         this.currYear = this.currYear + 1;
-        }
-        else {
-            this.currMonth = this.currMonth + 1;
-        }
-        this.showcurr();
-    };
-    Cal.prototype.previousMonth = function() {
-        if ( this.currMonth == 0 ) {
-            this.currMonth = 11;
-            this.currYear = this.currYear - 1;
-        }
-        else {
-            this.currMonth = this.currMonth - 1;
-        }
-        this.showcurr();
-    };
-    Cal.prototype.showcurr = function() {
-        this.showMonth(this.currYear, this.currMonth);
-    };
-    Cal.prototype.showMonth = function(y, m) {
-        let d = new Date()
-        , firstDayOfMonth = new Date(y, m, 7).getDay()
-        , lastDateOfMonth =  new Date(y, m+1, 0).getDate()
-        , lastDayOfLastMonth = m == 0 ? new Date(y-1, 11, 0).getDate() : new Date(y, m, 0).getDate();
-        let html = '<table>';
-        html += '<thead><tr>';
-        html += '<td class="monthAndYear" colspan="7">' + this.Months[m] + ' ' + y + '</td>';
-        html += '</tr></thead>';
-        html += '<tr class="days">';
-        for(let i=0; i < 5;i++) {
-            html += '<td>' + this.DaysOfWeek[i] + '</td>';
-        }
-        for(let i=5; i < this.DaysOfWeek.length;i++) {
-            html += '<td class = "weekend">' + this.DaysOfWeek[i] + '</td>';
-        }
-        html += '</tr>';
-        let i=1;
-        do {
-            let dow = new Date(y, m, i).getDay();
-        if ( dow == 1 ) {
-            html += '<tr>';
-        }
-        else if ( i == 1 ) {
-            html += '<tr>';
-            let k = lastDayOfLastMonth - firstDayOfMonth+1;
-            for(let j=0; j < firstDayOfMonth; j++) {
-                html += '<td class="not-current">' + k + '</td>';
+    } else {
+        this.currMonth = this.currMonth + 1;
+    }
+    this.showcurr();
+};
+Cal.prototype.previousMonth = function () {
+    if (this.currMonth == 0) {
+        this.currMonth = 11;
+        this.currYear = this.currYear - 1;
+    } else {
+        this.currMonth = this.currMonth - 1;
+    }
+    this.showcurr();
+};
+Cal.prototype.showcurr = function () {
+    this.showMonth(this.currYear, this.currMonth);
+};
+Cal.prototype.showMonth = function (y, m) {
+    let d = new Date(),
+        firstDayOfMonth = new Date(y, m, 7).getDay(),
+        lastDateOfMonth = new Date(y, m + 1, 0).getDate(),
+        lastDayOfLastMonth =
+            m == 0
+                ? new Date(y - 1, 11, 0).getDate()
+                : new Date(y, m, 0).getDate();
+    let html = "<table>";
+    html += "<thead><tr>";
+    html +=
+        '<td class="monthAndYear" colspan="7">' +
+        this.Months[m] +
+        " " +
+        y +
+        "</td>";
+    html += "</tr></thead>";
+    html += '<tr class="days">';
+    for (let i = 0; i < 5; i++) {
+        html += "<td>" + this.DaysOfWeek[i] + "</td>";
+    }
+    for (let i = 5; i < this.DaysOfWeek.length; i++) {
+        html +=
+            '<td class = "weekend">' +
+            this.DaysOfWeek[i] +
+            "</td>";
+    }
+    html += "</tr>";
+    let i = 1;
+    do {
+        let dow = new Date(y, m, i).getDay();
+        if (dow == 1) {
+            html += "<tr>";
+        } else if (i == 1) {
+            html += "<tr>";
+            let k =
+                lastDayOfLastMonth - firstDayOfMonth + 1;
+            for (let j = 0; j < firstDayOfMonth; j++) {
+                html +=
+                    '<td class="not-current">' +
+                    k +
+                    "</td>";
                 k++;
             }
         }
         let chk = new Date();
         let chkY = chk.getFullYear();
         let chkM = chk.getMonth();
-        if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-            html += '<td class="today">' + i + '</td>';
+        if (
+            chkY == this.currYear &&
+            chkM == this.currMonth &&
+            i == this.currDay
+        ) {
+            html += '<td class="today">' + i + "</td>";
         } else {
-            html += '<td class="normal">' + i + '</td>';
+            html += '<td class="normal">' + i + "</td>";
         }
-        if ( dow == 0 ) {
-            html += '</tr>';
-        }
-        else if ( i == lastDateOfMonth ) {
-            let k=1;
-            for(dow; dow < 7; dow++) {
-                html += '<td class="not-current">' + k + '</td>';
+        if (dow == 0) {
+            html += "</tr>";
+        } else if (i == lastDateOfMonth) {
+            let k = 1;
+            for (dow; dow < 7; dow++) {
+                html +=
+                    '<td class="not-current">' +
+                    k +
+                    "</td>";
                 k++;
             }
         }
         i++;
-        }while(i <= lastDateOfMonth);
-        html += '</table>';
-        document.getElementById(this.divId).innerHTML = html;
-        };
-        window.onload = function() {
-        let c = new Cal("divCal");			
-        c.showcurr();
-        getId('btnNext').onclick = function() {
+    } while (i <= lastDateOfMonth);
+    html += "</table>";
+    document.getElementById(this.divId).innerHTML = html;
+};
+window.onload = function () {
+    let c = new Cal("divCal");
+    c.showcurr();
+    getId("btnNext").onclick = function () {
         c.nextMonth();
-        };
-        getId('btnPrev').onclick = function() {
+    };
+    getId("btnPrev").onclick = function () {
         c.previousMonth();
-        };
-    }
-    function getId(id) {
-        return document.getElementById(id);
-    }
+    };
+};
+function getId(id) {
+    return document.getElementById(id);
+}
 
 //блок с курсами валют
 const exchangeRatesItem1Value = document.querySelector(
@@ -249,19 +280,32 @@ document
         const currentPrice = parseFloat(
             document.getElementById("current-price").value
         );
-        const shares = parseFloat(document.getElementById("shares").value);
+        const shares = parseFloat(
+            document.getElementById("shares").value
+        );
         const dividends =
-            parseFloat(document.getElementById("dividends").value) || 0;
+            parseFloat(
+                document.getElementById("dividends").value
+            ) || 0;
 
-        if (isNaN(startPrice) || isNaN(currentPrice) || isNaN(shares)) {
-            alert("Пожалуйста, заполните все обязательные поля.");
+        if (
+            isNaN(startPrice) ||
+            isNaN(currentPrice) ||
+            isNaN(shares)
+        ) {
+            alert(
+                "Пожалуйста, заполните все обязательные поля."
+            );
             return;
         }
 
         const initialInvestment = startPrice * shares;
-        const currentInvestment = currentPrice * shares + dividends;
-        const profitLoss = currentInvestment - initialInvestment;
-        const profitLossPercent = (profitLoss / initialInvestment) * 100;
+        const currentInvestment =
+            currentPrice * shares + dividends;
+        const profitLoss =
+            currentInvestment - initialInvestment;
+        const profitLossPercent =
+            (profitLoss / initialInvestment) * 100;
 
         document.getElementById(
             "current-value"
@@ -271,23 +315,32 @@ document
         document.getElementById("profit-loss").innerHTML =
             profitLoss >= 0
                 ? `Прибыль: <strong>${profitLoss.toFixed(
-                    2
-                )}  (${profitLossPercent.toFixed(2)}%)</strong>`
-                : `Убыток: <strong>${Math.abs(profitLoss).toFixed(
-                    2
-                )}  (${Math.abs(profitLossPercent).toFixed(2)}%)</strong>`;
+                      2
+                  )}  (${profitLossPercent.toFixed(
+                      2
+                  )}%)</strong>`
+                : `Убыток: <strong>${Math.abs(
+                      profitLoss
+                  ).toFixed(2)}  (${Math.abs(
+                      profitLossPercent
+                  ).toFixed(2)}%)</strong>`;
 
         // Показываем карточку с результатами
-        document.getElementById("result-card").style.display = "block";
+        document.getElementById(
+            "result-card"
+        ).style.display = "block";
     });
 //Инвестиционный калькулятор end
 
 //Акция
 // Получаем элементы
-const openModalBtn = document.getElementById("openModalBtn");
-const closeModalBtn = document.getElementById("closeModalBtn");
+const openModalBtn =
+    document.getElementById("openModalBtn");
+const closeModalBtn =
+    document.getElementById("closeModalBtn");
 const modal = document.getElementById("modal");
-const callbackForm = document.getElementById("callbackForm");
+const callbackForm =
+    document.getElementById("callbackForm");
 const phoneInput = document.getElementById("phone");
 
 // Открытие модального окна
@@ -310,7 +363,10 @@ window.addEventListener("click", (event) => {
 // Валидация номера телефона
 phoneInput.addEventListener("input", (event) => {
     // Удаляем все символы, кроме цифр
-    event.target.value = event.target.value.replace(/\D/g, "");
+    event.target.value = event.target.value.replace(
+        /\D/g,
+        ""
+    );
 });
 
 // Обработка отправки формы
@@ -321,47 +377,67 @@ callbackForm.addEventListener("submit", (event) => {
     const phoneInput = document.getElementById("phone");
 
     // Проверка на пустые поля
-    if (nameInput.value.trim() === "" || phoneInput.value.trim() === "") {
+    if (
+        nameInput.value.trim() === "" ||
+        phoneInput.value.trim() === ""
+    ) {
         alert("Пожалуйста, заполните все поля.");
         return;
     }
 
     // Проверка на минимальную длину номера телефона
     if (phoneInput.value.length < 10) {
-        alert("Номер телефона должен содержать не менее 10 цифр.");
+        alert(
+            "Номер телефона должен содержать не менее 10 цифр."
+        );
         return;
     }
 
     // Если все проверки пройдены
-    alert("Спасибо, " + nameInput.value + "! Мы скоро с вами свяжемся.");
+    alert(
+        "Спасибо, " +
+            nameInput.value +
+            "! Мы скоро с вами свяжемся."
+    );
     modal.style.display = "none"; // Закрываем модальное окно после отправки
     callbackForm.reset(); // Очищаем форму
 });
 
 // Счетчик обратного отсчета
-const countdownDate = new Date("2025-03-15T00:00:00").getTime();
+const countdownDate = new Date(
+    "2025-03-15T00:00:00"
+).getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
     const distance = countdownDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
     );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+    );
 
-    document.getElementById("days").innerText = String(days).padStart(2, "0");
-    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-    document.getElementById("minutes").innerText = String(minutes).padStart(
-        2,
-        "0"
-    );
-    document.getElementById("seconds").innerText = String(seconds).padStart(
-        2,
-        "0"
-    );
+    document.getElementById("days").innerText = String(
+        days
+    ).padStart(2, "0");
+    document.getElementById("hours").innerText = String(
+        hours
+    ).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(
+        minutes
+    ).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(
+        seconds
+    ).padStart(2, "0");
 
     if (distance < 0) {
         clearInterval(interval);
@@ -381,93 +457,144 @@ updateCountdown();
 const notSelected = document.getElementById("notSelected");
 const quizButton = document.getElementById("quiz_button");
 const fieldset = document.querySelector("fieldset");
-const quizDescription = document.querySelector(".quiz__description");
+const quizDescription = document.querySelector(
+    ".quiz__description"
+);
 let qNum = 0;
 let startValue = [5, 2, 1, 1, 1];
-let resultList = [{
-    tag: "bonds",
-    value: 0,
-}, {
-    tag: "stocks",
-    value: 0,
-}, {
-    tag: "funds",
-    value: 0,
-}, {
-    tag: "crypto",
-    value: 0,
-}, {
-    tag: "else",
-    value: 0,
-}];
-const qList= ["Есть ли у вас опыт инвестирования?", "Как долго вы готовы деражать инвестиции?", "Какая у вас финансовая цель?", "Какой уровень риска вы готовы принять?", "Какие типы финансовых инструментов вам интересны (можно выбрать несколько вариантов)?"];
-const optionList = [[{
-    tag: "Да",
-    value: "stocks",
-}, {
-    tag: "Нет",
-    value: "bonds",
-}], [{
-    tag: "Менее 1 года",
-    value: "bonds",
-}, {
-    tag: "1-3 года",
-    value: "funds",
-}, {
-    tag: "3-5 лет",
-    value: "stocks",
-}, {
-    tag: "Более 5 лет",
-    value: "stocks",
-}], [{
-    tag: "Сохранить капиталл",
-    value: "bonds",
-}, {
-    tag: "Получать пассивный доход",
-    value: "bonds",
-}, {
-    tag: "Увеличить капиталл",
-    value: "stocks",
-}, {
-    tag: "Высокий риск ради высокой прибыли",
-    value: "stocks",
-}], [{
-    tag: "Минимальный",
-    value: "bonds",
-}, {
-    tag: "Низкий",
-    value: "funds",
-}, {
-    tag: "Средний",
-    value: "stocks",
-}, {
-    tag: "Высокий",
-    value: "stocks",
-}], [{
-    tag: "Облигации",
-    value: "bonds",
-}, {
-    tag: "Фонды (ETF, ПИФы)",
-    value: "funds",
-}, {
-    tag: "Акции",
-    value: "stocks",
-}, {
-    tag: "Криптовалюты",
-    value: "crypto",
-}, {
-    tag: "Драгоценные металлы",
-    value: "else",
-}, {
-    tag: "Недвижимость",
-    value: "else",
-}]];
-
+let resultList = [
+    {
+        tag: "bonds",
+        value: 0,
+    },
+    {
+        tag: "stocks",
+        value: 0,
+    },
+    {
+        tag: "funds",
+        value: 0,
+    },
+    {
+        tag: "crypto",
+        value: 0,
+    },
+    {
+        tag: "else",
+        value: 0,
+    },
+];
+const qList = [
+    "Есть ли у вас опыт инвестирования?",
+    "Как долго вы готовы деражать инвестиции?",
+    "Какая у вас финансовая цель?",
+    "Какой уровень риска вы готовы принять?",
+    "Какие типы финансовых инструментов вам интересны (можно выбрать несколько вариантов)?",
+];
+const optionList = [
+    [
+        {
+            tag: "Да",
+            value: "stocks",
+        },
+        {
+            tag: "Нет",
+            value: "bonds",
+        },
+    ],
+    [
+        {
+            tag: "Менее 1 года",
+            value: "bonds",
+        },
+        {
+            tag: "1-3 года",
+            value: "funds",
+        },
+        {
+            tag: "3-5 лет",
+            value: "stocks",
+        },
+        {
+            tag: "Более 5 лет",
+            value: "stocks",
+        },
+    ],
+    [
+        {
+            tag: "Сохранить капиталл",
+            value: "bonds",
+        },
+        {
+            tag: "Получать пассивный доход",
+            value: "bonds",
+        },
+        {
+            tag: "Увеличить капиталл",
+            value: "stocks",
+        },
+        {
+            tag: "Высокий риск ради высокой прибыли",
+            value: "stocks",
+        },
+    ],
+    [
+        {
+            tag: "Минимальный",
+            value: "bonds",
+        },
+        {
+            tag: "Низкий",
+            value: "funds",
+        },
+        {
+            tag: "Средний",
+            value: "stocks",
+        },
+        {
+            tag: "Высокий",
+            value: "stocks",
+        },
+    ],
+    [
+        {
+            tag: "Облигации",
+            value: "bonds",
+        },
+        {
+            tag: "Фонды (ETF, ПИФы)",
+            value: "funds",
+        },
+        {
+            tag: "Акции",
+            value: "stocks",
+        },
+        {
+            tag: "Криптовалюты",
+            value: "crypto",
+        },
+        {
+            tag: "Драгоценные металлы",
+            value: "else",
+        },
+        {
+            tag: "Недвижимость",
+            value: "else",
+        },
+    ],
+];
 
 function calculateResult() {
-    if (qNum === qList.length || quizButton.textContent === "Пройти опрос") {
+    if (
+        qNum === qList.length ||
+        quizButton.textContent === "Пройти опрос"
+    ) {
         createQuiz();
-    } else if (!document.querySelector('input[name="invest"]:checked')) {
+    } else if (
+        !document.querySelector(
+            'input[name="invest"]:checked'
+        )
+    ) {
         notSelected.textContent = "Ответ не выбран";
     } else {
         resultCount();
@@ -477,7 +604,8 @@ function calculateResult() {
             fieldset.innerHTML = "";
             quizDescription.textContent = "";
             let legend = document.createElement("legend");
-            legend.textContent = "Ваш инвестиционный портфель";
+            legend.textContent =
+                "Ваш инвестиционный портфель";
             fieldset.appendChild(legend);
             createChart();
             quizButton.textContent = "Пройти опрос заново";
@@ -488,8 +616,8 @@ function calculateResult() {
         } else {
             buttonStyle();
             console.log(qNum);
-            createFieldsetElements();    
-        }            
+            createFieldsetElements();
+        }
     }
 }
 
@@ -504,13 +632,14 @@ function buttonStyleActive() {
 function createQuiz() {
     buttonStyle();
     quizButton.textContent = "Продолжить";
-    quizDescription.textContent = "Пройдите тест, который поможет определить, какие активы рассмотреть для вложения денег и составит ваш персонализированный инвестиционный портфель."
+    quizDescription.textContent =
+        "Пройдите тест, который поможет определить, какие активы рассмотреть для вложения денег и составит ваш персонализированный инвестиционный портфель.";
     qNum = 0;
     i = 0;
     for (elem of resultList) {
         elem.value = startValue[i];
         i += 1;
-    };
+    }
     createFieldsetElements();
     console.log(resultList);
 }
@@ -530,7 +659,7 @@ function createFieldsetElements() {
         let optionLabel = document.createElement("label");
         optionLabel.setAttribute("for", option.id);
         optionLabel.textContent = elem.tag;
-        optionElem.appendChild(optionLabel); 
+        optionElem.appendChild(optionLabel);
     });
     checkedIsActive();
 }
@@ -543,7 +672,7 @@ function createLegend() {
 }
 
 function createCheckboxElements() {
-    createLegend()
+    createLegend();
     let optionObj = optionList[qNum];
     optionObj.forEach((elem) => {
         let optionElem = document.createElement("div");
@@ -557,31 +686,34 @@ function createCheckboxElements() {
         let optionLabel = document.createElement("label");
         optionLabel.setAttribute("for", option.id);
         optionLabel.textContent = elem.tag;
-        optionElem.appendChild(optionLabel); 
+        optionElem.appendChild(optionLabel);
     });
     checkedIsActive();
 }
 
 function checkedIsActive() {
-    let checkedList = document.querySelectorAll('input[name="invest"]');
+    let checkedList = document.querySelectorAll(
+        'input[name="invest"]'
+    );
     for (elem of checkedList) {
         isActive(elem);
     }
 }
 
 function isActive(elem) {
-    elem.addEventListener("change", function() {
+    elem.addEventListener("change", function () {
         if (this.checked) {
             console.log(this.value);
             notSelected.textContent = "";
             buttonStyleActive();
         }
     });
-
 }
 
 function resultCount() {
-    let checkedList = document.querySelectorAll('input[name="invest"]');
+    let checkedList = document.querySelectorAll(
+        'input[name="invest"]'
+    );
     for (let i of checkedList) {
         if (i.checked) {
             for (j = 0; j < resultList.length; j++) {
@@ -591,23 +723,23 @@ function resultCount() {
                 }
             }
             console.log(resultList);
-        }    
+        }
     }
 }
 
 function getData() {
-    let dataList = []
+    let dataList = [];
     resultList.forEach((elem) => {
-        dataList.push(elem.value)
-    })
-    return dataList
+        dataList.push(elem.value);
+    });
+    return dataList;
 }
 
 function createChart() {
     let canvas = document.createElement("canvas");
     canvas.id = "investmentChart";
     fieldset.appendChild(canvas);
-    
+
     // Считаем данные для графика
     let dataList = [];
     let count = 0;
@@ -617,7 +749,7 @@ function createChart() {
     });
     let data = [];
     for (let elem of dataList) {
-        data.push(Math.round(elem / count * 100));
+        data.push(Math.round((elem / count) * 100));
     }
     console.log(data);
 
@@ -625,44 +757,230 @@ function createChart() {
 
     // Создаем график
     new Chart(ctx, {
-        type: 'pie',
+        type: "pie",
         data: {
-            labels: ["Облигации", "Акции", "Фонды", "Криптовалюта", "Другие активы"],
-            datasets: [{
-                data: [data[0], data[1], data[2], data[3], data[4]], // Данные в процентах
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(54, 162, 235, 0.7)',
-                    'rgba(255, 206, 86, 0.7)',
-                    'rgba(75, 192, 192, 0.7)',
-                    'rgba(153, 102, 255, 0.7)'
-                ],
-                borderWidth: 1
-            }]
+            labels: [
+                "Облигации",
+                "Акции",
+                "Фонды",
+                "Криптовалюта",
+                "Другие активы",
+            ],
+            datasets: [
+                {
+                    data: [
+                        data[0],
+                        data[1],
+                        data[2],
+                        data[3],
+                        data[4],
+                    ], // Данные в процентах
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.7)",
+                        "rgba(54, 162, 235, 0.7)",
+                        "rgba(255, 206, 86, 0.7)",
+                        "rgba(75, 192, 192, 0.7)",
+                        "rgba(153, 102, 255, 0.7)",
+                    ],
+                    borderWidth: 1,
+                },
+            ],
         },
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    position: 'bottom'
+                    position: "bottom",
                 },
                 tooltip: {
                     callbacks: {
                         label: function (tooltipItem) {
                             return ` ${tooltipItem.raw}%`;
-                        }
-                    }
-                },
-                datalabels: { // Настройки отображения процентов внутри круга
-                    color: 'black', // Цвет текста
-                    font: {
-                        weight: 'bold',
-                        size: 16
+                        },
                     },
-                    formatter: (value) => `${value}%` // Формат подписей
-                }
-            }
+                },
+                datalabels: {
+                    // Настройки отображения процентов внутри круга
+                    color: "black", // Цвет текста
+                    font: {
+                        weight: "bold",
+                        size: 16,
+                    },
+                    formatter: (value) => `${value}%`, // Формат подписей
+                },
+            },
         },
-        plugins: [ChartDataLabels] // Подключаем плагин
+        plugins: [ChartDataLabels], // Подключаем плагин
     });
+}
+
+//котировки - бегущая строка
+const optionsMarqueeItem = document.querySelector(
+    ".options__marquee_item"
+);
+const optionsMarquee = document.querySelector(
+    ".options__marquee"
+);
+const optionsMarqueeDouble = document.getElementById(
+    "options__marquee_double"
+);
+function getOptionValue(ticker) {
+    const optionUrl = `https://iss.moex.com/iss/engines/stock/markets/shares/securities/${ticker}.json?iss.meta=off`;
+    fetch(optionUrl)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let optionsMarqueeContainer =
+                document.createElement("div");
+            optionsMarqueeContainer.classList.add(
+                "options__marquee_item"
+            );
+            optionsMarquee.appendChild(
+                optionsMarqueeContainer
+            );
+            optionsMarqueeContainer.textContent =
+                ticker +
+                ": " +
+                data.marketdata.data[1][12].toFixed(2);
+            const clone =
+                optionsMarqueeContainer.cloneNode(true);
+            optionsMarqueeDouble.appendChild(clone);
+        })
+        .catch((error) => {
+            console.error(
+                "Ошибка при загрузке данных:",
+                error
+            );
+            optionsMarquee.textContent =
+                "Произошла ошибка при загрузке данных";
+        });
+}
+function getOptionValue2(ticker2) {
+    const optionUrl2 = `https://iss.moex.com/iss/engines/stock/markets/shares/securities/${ticker2}.json?iss.meta=off`;
+    fetch(optionUrl2)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let optionsMarqueeContainer =
+                document.createElement("div");
+            optionsMarqueeContainer.classList.add(
+                "options__marquee_item"
+            );
+            optionsMarquee.appendChild(
+                optionsMarqueeContainer
+            );
+            optionsMarqueeContainer.textContent =
+                ticker2 +
+                ": " +
+                data.marketdata.data[2][12].toFixed(2);
+            const clone =
+                optionsMarqueeContainer.cloneNode(true);
+            optionsMarqueeDouble.appendChild(clone);
+        })
+        .catch((error) => {
+            console.error(
+                "Ошибка при загрузке данных:",
+                error
+            );
+            optionsMarquee.textContent =
+                "Произошла ошибка при загрузке данных";
+        });
+}
+const tickers = ["TATN", "CHMF", "PLZL", "LKOH", "YDEX"];
+for (let ticker of tickers) {
+    //console.log(ticker);
+    getOptionValue(ticker);
+}
+const tickers2 = ["SNGSP", "MTSS", "GMKN", "SBER", "GAZP"];
+for (let ticker2 of tickers2) {
+    //console.log(ticker2);
+    getOptionValue2(ticker2);
+}
+
+//котировки - графики
+const optionsChart = document.querySelector(
+    ".options__chart"
+);
+const currentDate = new Date();
+let currentDateString = currentDate
+    .toISOString()
+    .split("T")[0];
+function getOptionHistory(ticker, currentDateString) {
+    const optionHistoryUrl = `https://iss.moex.com/iss/history/engines/stock/markets/shares/boards/tqbr/securities/${ticker}.json?from=2024-11-25&till=${currentDateString}}`;
+    fetch(optionHistoryUrl)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            const arrayOptionHistoryDates = [];
+            const arrayOptionHistoryPrices = [];
+            let i = 0;
+            while (i < data.history.data.length) {
+                let historyDate = data.history.data[i++][1];
+                arrayOptionHistoryDates.push(historyDate);
+            }
+            let k = 0;
+            while (k < data.history.data.length) {
+                let historyPrice =
+                    data.history.data[k++][13];
+                arrayOptionHistoryPrices.push(historyPrice);
+            }
+
+            let optionCanvas =
+                document.createElement("canvas");
+            optionCanvas.classList.add(
+                "options__chart_item"
+            );
+            optionsChart.appendChild(optionCanvas);
+            const dateData = {
+                labels: arrayOptionHistoryDates,
+                datasets: [
+                    {
+                        label: `${ticker} (RUB)`,
+                        data: arrayOptionHistoryPrices,
+                        lineTension: 0,
+                        fill: false,
+                        borderColor: "coral",
+                        backgroundColor: "transparent",
+                        borderDash: [1, 0],
+                        pointBorderColor: "coral",
+                        pointBackgroundColor: "grey",
+                        pointRadius: 2,
+                        pointHoverRadius: 10,
+                        pointHitRadius: 30,
+                        pointBorderWidth: 2,
+                        pointStyle: "rectRounded",
+                    },
+                ],
+            };
+            console.log(dateData[1]);
+            const chartOptions = {
+                legend: {
+                    display: true,
+                    position: "top",
+                    labels: {
+                        boxWidth: 80,
+                        fontColor: "black",
+                    },
+                },
+            };
+            new Chart(optionCanvas, {
+                type: "line",
+                data: dateData,
+                options: chartOptions,
+            });
+        })
+        .catch((error) => {
+            console.error(
+                "Ошибка при загрузке данных:",
+                error
+            );
+            optionsChart.textContent =
+                "Произошла ошибка при загрузке данных";
+        });
+}
+for (let ticker of tickers) {
+    getOptionHistory(ticker);
 }
