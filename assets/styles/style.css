@@ -522,3 +522,13 @@ fieldset > legend {
   padding-bottom: 15px;
   font-size: 1.5rem;
 }
+
+footer {
+  font-size: 0.9rem;
+  color: white;
+  background-color: #ff1c8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
