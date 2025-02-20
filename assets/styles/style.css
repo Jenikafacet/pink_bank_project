@@ -523,6 +523,65 @@ fieldset > legend {
   font-size: 1.5rem;
 }
 
+/* Для бегущей строки */
+.marquee {
+  animation: scroll 50s linear infinite;
+}
+
+.options__marquee {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  counter-reset: options__marquee_item;
+  justify-content: space-around;
+  min-width: 100%;
+}
+.options__marquee_wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #968e8e;
+  gap: 20px;
+}
+.options__marquee_item {
+  flex: 0 0 auto;
+  counter-increment: options__marquee_item;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffe6f2;
+  margin: 10px 0;
+  transition: all 0.1s ease-in-out;
+}
+.options__marquee_item:hover {
+  color: #ff99cb;
+}
+.options__marquee_wrapper:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+.options__chart {
+  max-width: 600px;
+  color: #968e8e;
+  margin-bottom: 20px;
+}
+.options__chart_item {
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
 footer {
   font-size: 0.9rem;
   color: white;

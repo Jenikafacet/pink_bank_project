@@ -447,6 +447,53 @@ fieldset
         padding-bottom: 15px
         font-size: 1.5rem
 
+/* Для бегущей строки */
+.marquee 
+    animation: scroll 50s linear infinite
+.options__marquee 
+    flex-shrink: 0
+    display: flex
+    gap: 10px
+    counter-reset: options__marquee_item
+    justify-content: space-around
+    min-width: 100%
+    &_wrapper
+        position: relative
+        display: flex
+        overflow: hidden
+        user-select: none
+        background-color: $additional-color
+        gap: 20px
+    &_item 
+        flex: 0 0 auto
+        counter-increment: options__marquee_item
+        display: flex
+        justify-content: center
+        align-items: center
+        color: $background-color
+        margin: 10px 0
+        transition: all 0.1s ease-in-out
+    &_item:hover 
+        color: $accent-color1
+    &_wrapper:hover  .marquee
+        animation-play-state: paused
+   
+@keyframes scroll 
+    from 
+        transform: translateX(0)
+    to
+        transform: translateX(calc(-100% - 20px))
+
+.options__chart
+    max-width: 600px
+    color: $additional-color
+    margin-bottom: 20px
+    &_item
+        margin-bottom: 10px
+        background-color: white
+        border-radius: 10px
+
+
 footer
     font-size: 0.9rem
     color: white
