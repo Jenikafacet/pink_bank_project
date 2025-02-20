@@ -1,5 +1,11 @@
 @import 'colors'
 
+@font-face 
+    font-family: "Lemon Tuesday"
+    src: url(/assets/fonts/lemon-tuesday.woff2)
+    font-weight: 400
+    font-display: block
+
 *
     margin: 0
     padding: 0
@@ -11,12 +17,136 @@ body
     color: $font-color
     margin: 0 auto
 
+header 
+    background-color:#ff99cc
+
+.nav-wrapper
+    width: 100%
+    margin: 0 auto
+
+nav 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 40px
+
+.logo 
+    font-family: "Lemon Tuesday"
+    font-size: 1.25rem
+
+h1 
+    font-size: 1.5rem
+
+.menu 
+    display: flex
+    gap: 20px
+
+nav a 
+    color: white
+    text-decoration: none
+    font-weight: bold
+    font-size: 1.1rem
+nav a:hover 
+    text-decoration: underline
+
+.banner-wrapper
+    background-color: #ff99cc
+    width: 100%
+    margin: 0 auto
+
+.banner 
+    
+    display: flex
+    color: white 
+    margin-bottom: 20px
+    padding: 30px 60px
+
+.titles 
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+/* Анимация появления текста */
+@keyframes textSlideIn 
+    0% 
+        opacity: 0
+        transform: translateY(10px)
+
+    100% 
+        opacity: 1
+        transform: translateY(0)
+
+.big-title, .small-title
+    opacity: 0 
+    animation: textSlideIn 1.5s ease-out forwards
+    position: relative
+
+.big-title
+    margin: 0 
+    font-size: 2rem
+    animation-delay: 0.3s
+
+.small-title
+    margin-top: 20px
+    font-size: 1.3rem
+    animation-delay: 0.6s
+
+.banner form 
+    display: flex
+    gap: 10px
+    margin-bottom: 30px
+    opacity: 0
+    animation: textSlideIn 1.5s ease-out forwards
+    animation-delay: 1s
+
+.banner button 
+    background-color: #ff3399
+    color: white
+    border: none
+    padding: 10px 20px
+    border-radius: 5px
+    cursor: pointer
+    font-size: 1rem
+    opacity: 0
+    animation: textSlideIn 1.5s ease-out forwards
+    animation-delay: 1.3s
+
+@keyframes fadeIn 
+    0% 
+        opacity: 0
+
+    100% 
+        opacity: 1
+
+.banner input[type="email"] 
+    padding: 10px
+    border: none
+    border-radius: 5px
+    width: 300px
+    font-size: 1rem
+
+.banner button 
+    background-color: #ff3399
+    color: white
+    border: none
+    padding: 10px 20px
+    border-radius: 5px
+    cursor: pointer
+    font-size: 1rem
+
+.banner button:hover 
+    background-color: #ff66b3
+
 /* Основной контейнер */
-.container
+.main-container
     display: flex
     margin: 0 auto
     padding: 0 20px
     gap: 20px
+    
+
+.main-content 
+    flex-basis: 75%
 
 /* Услуги и сервисы  */
 .service
@@ -29,20 +159,25 @@ body
     overflow: hidden
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
-/* .service img 
- height: auto
- object-fit: cover */
+.service img 
+    width: 45%
+    object-fit: cover
+
+.service p 
+    font-size: 1.4rem
+    text-align: center
+
+.service  h2
+    text-align: center
 
 .image-container
-    flex: 1
+    width: 45%
     align-items: stretch
-    width: 100%
     overflow: hidden
     border-radius: 10px
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
 .image-container img
-    object-fit: cover
     width: 100%
     height: 100%
     object-fit: cover
@@ -54,8 +189,8 @@ body
     padding: 20px
     border-radius: 8px
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-    width: 100%
-    max-width: 450px
+    width: 55%
+    
 
 .input-group
     margin-bottom: 15px
@@ -92,8 +227,8 @@ body
     background-color: #ffffff
     border-radius: 10px
     color: #333
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) /* Тень вокруг карточки */
-    display: none /* Скрываем карточку до нажатия кнопки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) 
+    display: none 
     border: 1px solid #e0e0e0
 
 .result-card h3
@@ -107,7 +242,7 @@ body
 
 /* Сайдбар с правой стороны */
 .sidebar
-    width: 400px
+    flex-basis: 25%
     background-color: white
     padding: 20px
     border-radius: 10px
