@@ -771,13 +771,10 @@ footer {
   border-radius: 5px;
 }
 
-.button {
-  height: 30px;
-  width: -moz-fit-content;
-  width: fit-content;
+.form-button {
+  width: 92%;
+  margin: 10px;
   font-size: 15px;
-  background-color: rgb(178, 104, 247);
-  border-radius: 10px;
 }
 
 #paragraph {

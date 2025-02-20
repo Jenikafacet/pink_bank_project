@@ -1,6 +1,6 @@
 @import 'colors'
 
-@font-face 
+@font-face
     font-family: "Lemon Tuesday"
     src: url(/assets/fonts/lemon-tuesday.woff2)
     font-weight: 400
@@ -17,27 +17,27 @@ body
     color: $font-color
     margin: 0 auto
 
-header 
-    background-color:#ff99cc
+header
+    background-color: #ff99cc
 
 .nav-wrapper
     width: 100%
     margin: 0 auto
 
-nav 
+nav
     display: flex
     justify-content: space-between
     align-items: center
     padding: 10px 40px
 
-.logo 
+.logo
     font-family: "Lemon Tuesday"
     font-size: 1.25rem
 
-h1 
+h1
     font-size: 1.5rem
 
-.menu 
+.menu
     display: flex
     gap: 20px
 
@@ -54,35 +54,35 @@ nav a:hover
     width: 100%
     margin: 0 auto
 
-.banner 
-    
+.banner
+
     display: flex
-    color: white 
+    color: white
     margin-bottom: 20px
     padding: 30px 60px
 
-.titles 
+.titles
     display: flex
     flex-direction: column
     justify-content: center
 
 /* Анимация появления текста */
-@keyframes textSlideIn 
-    0% 
+@keyframes textSlideIn
+    0%
         opacity: 0
         transform: translateY(10px)
 
-    100% 
+    100%
         opacity: 1
         transform: translateY(0)
 
 .big-title, .small-title
-    opacity: 0 
+    opacity: 0
     animation: textSlideIn 1.5s ease-out forwards
     position: relative
 
 .big-title
-    margin: 0 
+    margin: 0
     font-size: 2rem
     animation-delay: 0.3s
 
@@ -91,7 +91,7 @@ nav a:hover
     font-size: 1.3rem
     animation-delay: 0.6s
 
-.banner form 
+.banner form
     display: flex
     gap: 10px
     margin-bottom: 30px
@@ -99,7 +99,7 @@ nav a:hover
     animation: textSlideIn 1.5s ease-out forwards
     animation-delay: 1s
 
-.banner button 
+.banner button
     background-color: #ff3399
     color: white
     border: none
@@ -111,21 +111,21 @@ nav a:hover
     animation: textSlideIn 1.5s ease-out forwards
     animation-delay: 1.3s
 
-@keyframes fadeIn 
-    0% 
+@keyframes fadeIn
+    0%
         opacity: 0
 
-    100% 
+    100%
         opacity: 1
 
-.banner input[type="email"] 
+.banner input[type="email"]
     padding: 10px
     border: none
     border-radius: 5px
     width: 300px
     font-size: 1rem
 
-.banner button 
+.banner button
     background-color: #ff3399
     color: white
     border: none
@@ -134,7 +134,7 @@ nav a:hover
     cursor: pointer
     font-size: 1rem
 
-.banner button:hover 
+.banner button:hover
     background-color: #ff66b3
 
 /* Основной контейнер */
@@ -143,9 +143,8 @@ nav a:hover
     margin: 0 auto
     padding: 0 20px
     gap: 20px
-    
 
-.main-content 
+.main-content
     flex-basis: 75%
 
 /* Услуги и сервисы  */
@@ -159,11 +158,11 @@ nav a:hover
     overflow: hidden
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
-.service img 
+.service img
     width: 45%
     object-fit: cover
 
-.service p 
+.service p
     font-size: 1.4rem
     text-align: center
 
@@ -190,7 +189,6 @@ nav a:hover
     border-radius: 8px
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
     width: 55%
-    
 
 .input-group
     margin-bottom: 15px
@@ -227,8 +225,8 @@ nav a:hover
     background-color: #ffffff
     border-radius: 10px
     color: #333
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) 
-    display: none 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+    display: none
     border: 1px solid #e0e0e0
 
 .result-card h3
@@ -583,9 +581,9 @@ fieldset
         font-size: 1.5rem
 
 /* Для бегущей строки */
-.marquee 
+.marquee
     animation: scroll 50s linear infinite
-.options__marquee 
+.options__marquee
     flex-shrink: 0
     display: flex
     gap: 10px
@@ -599,7 +597,7 @@ fieldset
         user-select: none
         background-color: $additional-color
         gap: 20px
-    &_item 
+    &_item
         flex: 0 0 auto
         counter-increment: options__marquee_item
         display: flex
@@ -608,13 +606,13 @@ fieldset
         color: $background-color
         margin: 10px 0
         transition: all 0.1s ease-in-out
-    &_item:hover 
+    &_item:hover
         color: $accent-color1
     &_wrapper:hover  .marquee
         animation-play-state: paused
-   
-@keyframes scroll 
-    from 
+
+@keyframes scroll
+    from
         transform: translateX(0)
     to
         transform: translateX(calc(-100% - 20px))
@@ -628,7 +626,6 @@ fieldset
         background-color: white
         border-radius: 10px
 
-
 footer
     font-size: 0.9rem
     color: white
@@ -638,13 +635,12 @@ footer
     justify-content: center
     padding: 10px
 
-
 //форма
-.callUs 
+.callUs
     width: 200px
     margin: 10px
 
-.imgWrapper 
+.imgWrapper
     display: flex
     justify-content: center
     align-items: center
@@ -656,29 +652,25 @@ footer
     font-size: 13px
     border-radius: 5px
 
-.button 
-    height: 30px
-    width: fit-content
+.form-button
+    width: 92%
+    margin: 10px
     font-size: 15px
-    background-color: rgb(178, 104, 247)
-    border-radius: 10px
 
-
-#paragraph 
+#paragraph
     display: flex
     flex-direction: row
     justify-content: flex-start
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
     font-size: 20px
 
-.formWrapper 
+.formWrapper
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
 
-
-.error 
+.error
     font-size: 15px
     margin: 0
     color: brown
