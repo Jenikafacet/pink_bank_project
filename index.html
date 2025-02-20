@@ -15,39 +15,53 @@
     <body>
         <!-- Шапка сайта -->
         <header>
-            <!-- Логотип -->
-            <div class="logo">💖PINK BANK</div>
-
-            <!-- Навигационное меню -->
-            <nav>
-                <a href="#news">Меню</a>
-            </nav>
+            <div class="nav-wrapper">
+                <nav>
+                    <div class="logo">
+                        <h1>💖Pink Bank</h1>
+                    </div>
+                    <div class="menu">
+                        <a href="#news">Личный кабинет</a>
+                        <a href="#services">Услуги</a> 
+                        <a href="#feedback">Обратная связь</a>
+                    </div>
+                </nav>
+            </div>
         </header>
+
         <!-- Баннер с формой подписки -->
-        <div class="banner">
-            <h1>
-                Girls-friendly Pink Bank<br />
-                ваши финансы - ваши правила!
-            </h1>
-            <h2>Подпишись на новости и будь в курсе лучших предложений</h2>
-            <form></form>
+        <div class="banner-wrapper">
+            <div class ="banner">
+                <div class="titles">
+                    <h2 class="big-title">Girls friendly Pink Bank</h2>
+                    <h2 class="big-title"> Твои финансы - твои правила! </h2>
+                    <p class="small-title">Присоединяйся к банку, который понимает тебя </p>
+                    <form>
+                        <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        
         </div>
+
+        <!-- Котировки -->
+        <div class="options__marquee_wrapper">
+            <div class="options__marquee marquee" id="options__marquee_main">
+                <!--<span class="options__marquee_item">
+                </span>-->
+            </div>
+            <div aria-hidden="true" class="options__marquee marquee" id="options__marquee_double"></div>
+        </div>
+        <div class="options">
+            <h2 class="options__title">Динамика акций Топ-5 компаний на Московской Бирже</h2>
+            <div class="options__chart"></div>
+        </div>
+
         <!-- Основной контент -->
-        <div class="container">
+        <div class="main-container">
             <!-- Основной контент -->
             <div class="main-content">
-                <!-- Котировки -->
-                <div class="options__marquee_wrapper">
-                    <div class="options__marquee marquee" id="options__marquee_main">
-                        <!--<span class="options__marquee_item">
-                        </span>-->
-                    </div>
-                    <div aria-hidden="true" class="options__marquee marquee" id="options__marquee_double"></div>
-                </div>
-                <div class="options">
-                    <h2 class="options__title">Динамика акций Топ-5 компаний на Московской Бирже</h2>
-                    <div class="options__chart"></div>
-                </div>
                 <!-- Услуги и сервисы -->
                 <div id="services">
                     <!-- Услуга 1 -->
@@ -64,7 +78,7 @@
                     <div class="service">
                         <div class="invest-calc">
                             <h2>Инвестиционные продукты</h2>
-                            <p>Инвестиционный калькулятор</p>
+                            <p>Калькулятор доходности акций</p>
                             <div class="input-group">
                                 <label for="start-price">Стартовая цена акции:</label>
                                 <input type="number" id="start-price" placeholder="Введите стартовую цену" />
@@ -153,9 +167,9 @@
                 </div>
                 <ul id="newsList"></ul>
                 <!-- Календарь инвестора -->
-                <div class="investor-calendar">
+                <!-- <div class="investor-calendar">
                     <h2 class="sidebar_header">Календарь инвестора</h2>
-                </div>
+                </div> -->
                 <!-- Простой календарь -->
                 <div class="calendar">
                     <h2 class="sidebar_header">Календарь</h2>
