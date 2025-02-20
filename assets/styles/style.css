@@ -185,7 +185,8 @@ nav a:hover {
 
 .service img {
   width: 45%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .service p {
@@ -208,7 +209,8 @@ nav a:hover {
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 10px;
 }
 
@@ -698,7 +700,9 @@ fieldset > legend {
   position: relative;
   display: flex;
   overflow: hidden;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: #968e8e;
   gap: 20px;
 }
@@ -746,4 +750,53 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px;
+}
+
+.callUs {
+  width: 200px;
+  margin: 10px;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.button {
+  height: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 15px;
+  background-color: rgb(178, 104, 247);
+  border-radius: 10px;
+}
+
+#paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  font-size: 15px;
+  margin: 0;
+  color: brown;
 }
