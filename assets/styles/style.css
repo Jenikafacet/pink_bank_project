@@ -89,7 +89,8 @@ nav a:hover {
     transform: translateY(0);
   }
 }
-.big-title, .small-title {
+.big-title,
+.small-title {
   opacity: 0;
   animation: textSlideIn 1.5s ease-out forwards;
   position: relative;
@@ -137,7 +138,7 @@ nav a:hover {
     opacity: 1;
   }
 }
-.banner input[type=email] {
+.banner input[type="email"] {
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -186,7 +187,7 @@ nav a:hover {
 .service img {
   width: 45%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .service p {
@@ -206,19 +207,18 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< Updated upstream
 .image-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
-=======
+  object-fit: cover;
+}
+
 .image-container-currency img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
->>>>>>> Stashed changes
   border-radius: 10px;
 }
 
@@ -726,8 +726,8 @@ fieldset > legend {
   display: flex;
   overflow: hidden;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background-color: #968e8e;
   gap: 20px;
 }
