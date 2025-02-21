@@ -177,9 +177,10 @@ nav a:hover
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
 .image-container img
+.image-container-currency img
+    object-fit: cover
     width: 100%
     height: 100%
-    object-fit: cover
     border-radius: 10px
 
 .invest-calc
@@ -189,6 +190,21 @@ nav a:hover
     border-radius: 8px
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
     width: 55%
+
+.currency-calc
+    max-width: 450px
+    width: 100%
+    margin-left: 30px
+    background-color: #fff
+    padding: 20px
+    border-radius: 8px
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+.image-container-currency
+    flex: 1
+    max-width: 100%
+    border-radius: 10px
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
 .input-group
     margin-bottom: 15px
@@ -236,6 +252,20 @@ nav a:hover
 
 .result-card p
     margin: 5px 0
+    font-size: 16px
+
+.currency-result-card
+    display: none // Изначально скрыто
+    margin-top: $margin-top
+    padding: $padding
+    background-color: #ffffff
+    border-radius: $border-radius
+    box-shadow: 0 4px 8px $shadow-color
+    color: #333
+    font-size: $font-size
+
+.currency-result-card p 
+    margin: 0
     font-size: 16px
 
 /* Сайдбар с правой стороны */
@@ -412,6 +442,34 @@ td.today
         margin-top: 10px
         padding-left: 5px
         font-size: 12px
+
+/* Погода */
+.weather-summary 
+    width: 100%
+    max-width: 400px
+    margin: 0 auto
+    background-color: #f1f1f1
+    padding: 20px
+    border-radius: 8px
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+
+
+.weather-summary h2 
+    text-align: center
+    font-size: 24px
+    margin-bottom: 20px
+
+.weather-info 
+    text-align: center
+
+.weather-info img 
+    width: 50px
+    height: 50px
+
+.weather-info p 
+    margin: 10px 0
+    font-size: 18px
+
 
     /* Стили для акции */
 .promotion
