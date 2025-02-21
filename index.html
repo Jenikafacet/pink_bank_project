@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+<<<<<<< Updated upstream
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -209,46 +210,204 @@
                         <div id="divCal"></div>
                     </div>
                 </div>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pink Bank – Girls Friendly</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/images/favicon.svg"
+      type="image/svg"
+    />
+    <link rel="stylesheet" href="/assets/styles/reset.css" />
+    <link rel="stylesheet" href="/assets/styles/normalize.css" />
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header>
+      <!-- Логотип -->
+      <div class="logo">💖PINK BANK</div>
+
+      <!-- Навигационное меню -->
+      <nav>
+        <a href="#news">Меню</a>
+      </nav>
+    </header>
+    <!-- Баннер с формой подписки -->
+    <div class="banner">
+      <h1>
+        Girls-friendly Pink Bank<br />
+        ваши финансы - ваши правила!
+      </h1>
+      <h2>Подпишись на новости и будь в курсе лучших предложений</h2>
+      <form></form>
+    </div>
+    <!-- Основной контент -->
+    <div class="container">
+      <!-- Основной контент -->
+      <div class="main-content">
+        <!-- Услуги и сервисы -->
+        <div id="services">
+          <!-- Услуга 1 -->
+          <div class="service">
+            <div class="image-container-currency">
+              <img src="/assets/images/money.png" alt="Валютные операции" />
             </div>
+            <div class="currency-calc">
+              <h2>Валютные операции</h2>
+              <p>Валютный калькулятор</p>
+              <div class="input-group">
+                <label for="amount">Сумма</label>
+                <input type="number" id="amount" placeholder="Введите сумму" />
+              </div>
+              <div class="input-group">
+                <label for="fromCurrency">Из валюты</label>
+                <select id="fromCurrency">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="JPY">JPY</option>
+                  <option value="RUB">RUB</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="toCurrency">В валюту</label>
+                <select id="toCurrency">
+                  <option value="EUR">EUR</option>
+                  <option value="USD">USD</option>
+                  <option value="GBP">GBP</option>
+                  <option value="JPY">JPY</option>
+                  <option value="RUB">RUB</option>
+                </select>
+              </div>
+              <button class="button" onclick="convertCurrency()">
+                Конвертировать
+              </button>
+              <div class="currency-result-card" id="currency-result-card">
+                <p id="currency-result"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Услуга 2 -->
+          <div class="service">
+            <div class="invest-calc">
+              <h2>Инвестиционные продукты</h2>
+              <p>Инвестиционный калькулятор</p>
+              <div class="input-group">
+                <label for="start-price">Стартовая цена акции:</label>
+                <input
+                  type="number"
+                  id="start-price"
+                  placeholder="Введите стартовую цену"
+                />
+              </div>
+              <div class="input-group">
+                <label for="current-price">Текущая цена акции:</label>
+                <input
+                  type="number"
+                  id="current-price"
+                  placeholder="Введите текущую цену"
+                />
+              </div>
+              <div class="input-group">
+                <label for="shares">Количество акций:</label>
+                <input
+                  type="number"
+                  id="shares"
+                  placeholder="Введите количество акций"
+                />
+              </div>
+              <div class="input-group">
+                <label for="dividends">Дивиденды (если есть):</label>
+                <input
+                  type="number"
+                  id="dividends"
+                  placeholder="оставьте поле пустым, если дивидентов нет"
+                />
+              </div>
+              <button class="button" id="calculate-button">Рассчитать</button>
+
+              <div class="result-card" id="result-card">
+                <h3>Результаты:</h3>
+                <p id="current-value"></p>
+                <p id="profit-loss"></p>
+              </div>
+            </div>
+            <div class="image-container">
+              <img src="/assets/images/banking.png" alt="Акции" />
+            </div>
+          </div>
+
+          <!-- Услуга 3 -->
+          <div class="service">
+            <img src="/assets/images/invest.png" alt="Услуга 3" />
+            <div class="service-content">
+              <h2>консультации</h2>
+              <p>закажите консультацию</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Акция -->
-        <div class="promotion">
-            <h2>«Стартуй уверенно! 🚀</h2>
-            <p>Получи до 5000 ₽ стартового бонуса при открытии счета до 15.03.2025</p>
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    <span class="countdown-label">дней</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">00</span>
-                    <span class="countdown-label">часов</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">00</span>
-                    <span class="countdown-label">минут</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">00</span>
-                    <span class="countdown-label">секунд</span>
-                </div>
+        <!-- Опрос про инвестиции -->
+        <div class="quiz">
+          <h2 class="quiz__title">Узнайте, куда сейчас лучше инвестировать</h2>
+          <p class="quiz__description">
+            Пройдите тест, который поможет определить, какие активы рассмотреть
+            для вложения денег и составит ваш персонализированный инвестиционный
+            портфель.
+          </p>
+          <form>
+            <fieldset></fieldset>
+            <div>
+              <button
+                type="button"
+                id="quiz_button"
+                onclick="calculateResult()"
+              >
+                Пройти опрос
+              </button>
+              <p id="notSelected"></p>
             </div>
-            <button class="cta-button" id="openModalBtn">Заказать звонок</button>
+          </form>
         </div>
-        <!-- Модальное окно -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeModalBtn">&times;</span>
-                <h2>Заявка на перезвон</h2>
-                <form id="callbackForm">
-                    <input type="text" id="name" placeholder="Имя и фамилия" required />
-                    <input type="tel" id="phone" placeholder="Номер телефона" required />
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
+      </div>
+
+      <!-- Сайдбар с правой стороны -->
+      <div class="sidebar">
+        <!-- Лента новостей -->
+        <div class="newsList_header">
+          <h2 class="sidebar_header">Новости</h2>
+        </div>
+        <ul id="newsList"></ul>
+
+        <!-- Курс валют -->
+        <div class="exchange-rates">
+          <h2 class="sidebar_header">Курсы валют</h2>
+          <div class="exchange-rates__error"></div>
+          <div class="exchange-rates__wrapper">
+            <div class="exchange-rates__title_name">Валюта</div>
+            <div class="exchange-rates__title_value">Курс</div>
+            <div class="exchange-rates__title_trend">Тренд</div>
+            <div class="exchange-rates__item1_name">USD</div>
+            <div class="exchange-rates__item1_value"></div>
+            <div class="exchange-rates__item1_trend"></div>
+            <div class="exchange-rates__item2_name">EUR</div>
+            <div class="exchange-rates__item2_value"></div>
+            <div class="exchange-rates__item2_trend"></div>
+            <div class="exchange-rates__item3_name">GBP</div>
+            <div class="exchange-rates__item3_value"></div>
+            <div class="exchange-rates__item3_trend"></div>
+          </div>
+          <div class="exchange-rates__date"></div>
         </div>
 
+<<<<<<< Updated upstream
         <!-- Подвал -->
         <footer>
             <div>&copy; 2025 Pink Bank. Все права защищены.</div>
@@ -257,4 +416,70 @@
         <script src="assets/js/form.js"></script>
         <script src="assets/js/quiz.js"></script>
     </body>
+=======
+        <!-- Календарь инвестора -->
+        <div class="investor-calendar">
+          <h2 class="sidebar_header">Календарь инвестора</h2>
+        </div>
+        <!-- Простой календарь -->
+        <div class="calendar">
+          <h2 class="sidebar_header">Календарь</h2>
+          <div class="calendar-wrapper">
+            <button id="btnPrev" type="button">Предыдущий</button>
+            <button id="btnNext" type="button">Следующий</button>
+            <div id="divCal"></div>
+          </div>
+        </div>
+        <!-- Блок с погодой -->
+        <div class="weather-widget">
+          <h2 class="sidebar_header">Погода</h2>
+          <div id="weather-info">Загрузка...</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Акция -->
+    <div class="promotion">
+      <h2>«Стартуй уверенно! 🚀</h2>
+      <p>Получи до 5000 ₽ стартового бонуса при открытии счета до 15.03.2025</p>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <span class="countdown-label">дней</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <span class="countdown-label">часов</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <span class="countdown-label">минут</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <span class="countdown-label">секунд</span>
+        </div>
+      </div>
+      <button class="cta-button" id="openModalBtn">Заказать звонок</button>
+    </div>
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Заявка на перезвон</h2>
+        <form id="callbackForm">
+          <input type="text" id="name" placeholder="Имя и фамилия" required />
+          <input type="tel" id="phone" placeholder="Номер телефона" required />
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+      <p>&copy; 2025 Pink Bank. Все права защищены.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
