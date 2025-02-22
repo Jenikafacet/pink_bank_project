@@ -638,7 +638,8 @@ fieldset
         padding-bottom: 15px
         font-size: 1.5rem
 
-/* Для бегущей строки */
+
+/* Для бегущей строки с котировками акций*/
 .marquee
     animation: scroll 50s linear infinite
 .options__marquee
@@ -655,6 +656,7 @@ fieldset
         user-select: none
         background-color: $additional-color
         gap: 20px
+        margin-bottom: 30px
     &_item
         flex: 0 0 auto
         counter-increment: options__marquee_item
@@ -675,14 +677,36 @@ fieldset
     to
         transform: translateX(calc(-100% - 20px))
 
+/* Для карусели с графиками котировок акций */
 .options__chart
-    max-width: 600px
+    max-width: 100%
     color: $additional-color
     margin-bottom: 20px
     &_item
         margin-bottom: 10px
         background-color: white
         border-radius: 10px
+
+.options__chart .owl-nav,
+.options__carousel_item .owl-nav
+    position: absolute
+    height: 0
+    width: 100%
+    bottom: -60px
+    top: 50%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.options__carousel_item 
+    margin-left: 35px
+    margin-right: 35px
+
+.options__title
+    font-size: 1.75rem
+    font-weight: 700
+    margin-bottom: 30px           
+        
 
 footer
     font-size: 0.9rem
@@ -736,3 +760,4 @@ footer
     flex-direction: column
     justify-content: center
     align-items: center
+

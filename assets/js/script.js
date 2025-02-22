@@ -13,14 +13,18 @@ fetch(
             newsList.appendChild(newsItem);
             let newsItemLink = document.createElement("a");
             newsItemLink.classList.add("newsLink");
-            newsItemLink.textContent = data.articles[i].title;
+            newsItemLink.textContent =
+                data.articles[i].title;
             newsItemLink.target = "_blank";
             newsItemLink.href = data.articles[i].url;
             newsItem.appendChild(newsItemLink);
-            let newsItemInfo = document.createElement("div");
+            let newsItemInfo =
+                document.createElement("div");
             newsItemInfo.classList.add("newsInfo");
             newsItemInfo.textContent =
-                data.articles[i].publishedAt.split("T")[1].slice(0, -4) +
+                data.articles[i].publishedAt
+                    .split("T")[1]
+                    .slice(0, -4) +
                 ", " +
                 data.articles[i].source.name;
             newsItem.appendChild(newsItemInfo);
@@ -37,7 +41,15 @@ fetch(
 
 let Cal = function (divId) {
     this.divId = divId;
-    this.DaysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+    this.DaysOfWeek = [
+        "Пн",
+        "Вт",
+        "Ср",
+        "Чт",
+        "Пт",
+        "Сб",
+        "Вс",
+    ];
     this.Months = [
         "Январь",
         "Февраль",
@@ -100,7 +112,10 @@ Cal.prototype.showMonth = function (y, m) {
         html += "<td>" + this.DaysOfWeek[i] + "</td>";
     }
     for (let i = 5; i < this.DaysOfWeek.length; i++) {
-        html += '<td class = "weekend">' + this.DaysOfWeek[i] + "</td>";
+        html +=
+            '<td class = "weekend">' +
+            this.DaysOfWeek[i] +
+            "</td>";
     }
     html += "</tr>";
     let i = 1;
@@ -110,9 +125,13 @@ Cal.prototype.showMonth = function (y, m) {
             html += "<tr>";
         } else if (i == 1) {
             html += "<tr>";
-            let k = lastDayOfLastMonth - firstDayOfMonth + 1;
+            let k =
+                lastDayOfLastMonth - firstDayOfMonth + 1;
             for (let j = 0; j < firstDayOfMonth; j++) {
-                html += '<td class="not-current">' + k + "</td>";
+                html +=
+                    '<td class="not-current">' +
+                    k +
+                    "</td>";
                 k++;
             }
         }
@@ -133,7 +152,10 @@ Cal.prototype.showMonth = function (y, m) {
         } else if (i == lastDateOfMonth) {
             let k = 1;
             for (dow; dow < 7; dow++) {
-                html += '<td class="not-current">' + k + "</td>";
+                html +=
+                    '<td class="not-current">' +
+                    k +
+                    "</td>";
                 k++;
             }
         }
@@ -159,8 +181,10 @@ function getId(id) {
 //блок с курсами валют
 async function convertCurrency() {
     const amount = document.getElementById("amount").value;
-    const fromCurrency = document.getElementById("fromCurrency").value;
-    const toCurrency = document.getElementById("toCurrency").value;
+    const fromCurrency =
+        document.getElementById("fromCurrency").value;
+    const toCurrency =
+        document.getElementById("toCurrency").value;
 
     if (!amount || amount <= 0) {
         alert("Пожалуйста, введите корректную сумму");
@@ -179,20 +203,30 @@ async function convertCurrency() {
             "currency-result"
         ).innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
     } catch (error) {
-        alert("Ошибка при получении курса валют. Попробуйте позже.");
+        alert(
+            "Ошибка при получении курса валют. Попробуйте позже."
+        );
     }
 }
 
 fetch("https://www.cbr-xml-daily.ru/daily_json.js")
     .then((response) => response.json())
     .then((data) => {
-        document.querySelector(".exchange-rates__date").textContent =
+        document.querySelector(
+            ".exchange-rates__date"
+        ).textContent =
             "Обновлено: " + data.Date.slice(0, -15);
-        document.querySelector(".exchange-rates__item1_value").textContent =
+        document.querySelector(
+            ".exchange-rates__item1_value"
+        ).textContent =
             data.Valute.USD.Value.toFixed(2) + " RUB";
-        document.querySelector(".exchange-rates__item2_value").textContent =
+        document.querySelector(
+            ".exchange-rates__item2_value"
+        ).textContent =
             data.Valute.EUR.Value.toFixed(2) + " RUB";
-        document.querySelector(".exchange-rates__item3_value").textContent =
+        document.querySelector(
+            ".exchange-rates__item3_value"
+        ).textContent =
             data.Valute.GBP.Value.toFixed(2) + " RUB";
 
         function updateTrend(element, margin) {
@@ -200,28 +234,38 @@ fetch("https://www.cbr-xml-daily.ru/daily_json.js")
                 margin >= 0
                     ? "🠕 +" + margin.toFixed(4)
                     : "🠗 " + margin.toFixed(4);
-            element.style.color = margin >= 0 ? "green" : "red";
+            element.style.color =
+                margin >= 0 ? "green" : "red";
         }
         updateTrend(
-            document.querySelector(".exchange-rates__item1_trend"),
+            document.querySelector(
+                ".exchange-rates__item1_trend"
+            ),
             data.Valute.USD.Value - data.Valute.USD.Previous
         );
         updateTrend(
-            document.querySelector(".exchange-rates__item2_trend"),
+            document.querySelector(
+                ".exchange-rates__item2_trend"
+            ),
             data.Valute.EUR.Value - data.Valute.EUR.Previous
         );
         updateTrend(
-            document.querySelector(".exchange-rates__item3_trend"),
+            document.querySelector(
+                ".exchange-rates__item3_trend"
+            ),
             data.Valute.GBP.Value - data.Valute.GBP.Previous
         );
     })
     .catch((error) => {
         console.error("Ошибка при загрузке данных:", error);
-        document.querySelector(".exchange-rates__error").textContent =
-            "Ошибка при загрузке данных";
+        document.querySelector(
+            ".exchange-rates__error"
+        ).textContent = "Ошибка при загрузке данных";
     });
 // Показать результат
-const resultCard = document.getElementById("currency-result-card");
+const resultCard = document.getElementById(
+    "currency-result-card"
+);
 
 //Инвестиционный калькулятор
 
@@ -235,19 +279,32 @@ document
         const currentPrice = parseFloat(
             document.getElementById("current-price").value
         );
-        const shares = parseFloat(document.getElementById("shares").value);
+        const shares = parseFloat(
+            document.getElementById("shares").value
+        );
         const dividends =
-            parseFloat(document.getElementById("dividends").value) || 0;
+            parseFloat(
+                document.getElementById("dividends").value
+            ) || 0;
 
-        if (isNaN(startPrice) || isNaN(currentPrice) || isNaN(shares)) {
-            alert("Пожалуйста, заполните все обязательные поля.");
+        if (
+            isNaN(startPrice) ||
+            isNaN(currentPrice) ||
+            isNaN(shares)
+        ) {
+            alert(
+                "Пожалуйста, заполните все обязательные поля."
+            );
             return;
         }
 
         const initialInvestment = startPrice * shares;
-        const currentInvestment = currentPrice * shares + dividends;
-        const profitLoss = currentInvestment - initialInvestment;
-        const profitLossPercent = (profitLoss / initialInvestment) * 100;
+        const currentInvestment =
+            currentPrice * shares + dividends;
+        const profitLoss =
+            currentInvestment - initialInvestment;
+        const profitLossPercent =
+            (profitLoss / initialInvestment) * 100;
 
         document.getElementById(
             "current-value"
@@ -257,23 +314,32 @@ document
         document.getElementById("profit-loss").innerHTML =
             profitLoss >= 0
                 ? `Прибыль: <strong>${profitLoss.toFixed(
-                        2
-                    )}  (${profitLossPercent.toFixed(2)}%)</strong>`
-                : `Убыток: <strong>${Math.abs(profitLoss).toFixed(
-                        2
-                    )}  (${Math.abs(profitLossPercent).toFixed(2)}%)</strong>`;
+                      2
+                  )}  (${profitLossPercent.toFixed(
+                      2
+                  )}%)</strong>`
+                : `Убыток: <strong>${Math.abs(
+                      profitLoss
+                  ).toFixed(2)}  (${Math.abs(
+                      profitLossPercent
+                  ).toFixed(2)}%)</strong>`;
 
         // Показываем карточку с результатами
-        document.getElementById("result-card").style.display = "block";
+        document.getElementById(
+            "result-card"
+        ).style.display = "block";
     });
 //Инвестиционный калькулятор end
 
 //Акция
 // Получаем элементы
-const openModalBtn = document.getElementById("openModalBtn");
-const closeModalBtn = document.getElementById("closeModalBtn");
+const openModalBtn =
+    document.getElementById("openModalBtn");
+const closeModalBtn =
+    document.getElementById("closeModalBtn");
 const modal = document.getElementById("modal");
-const callbackForm = document.getElementById("callbackForm");
+const callbackForm =
+    document.getElementById("callbackForm");
 const phoneInput = document.getElementById("phone");
 
 // Открытие модального окна
@@ -296,7 +362,10 @@ window.addEventListener("click", (event) => {
 // Валидация номера телефона
 phoneInput.addEventListener("input", (event) => {
     // Удаляем все символы, кроме цифр
-    event.target.value = event.target.value.replace(/\D/g, "");
+    event.target.value = event.target.value.replace(
+        /\D/g,
+        ""
+    );
 });
 
 // Обработка отправки формы
@@ -307,47 +376,67 @@ callbackForm.addEventListener("submit", (event) => {
     const phoneInput = document.getElementById("phone");
 
     // Проверка на пустые поля
-    if (nameInput.value.trim() === "" || phoneInput.value.trim() === "") {
+    if (
+        nameInput.value.trim() === "" ||
+        phoneInput.value.trim() === ""
+    ) {
         alert("Пожалуйста, заполните все поля.");
         return;
     }
 
     // Проверка на минимальную длину номера телефона
     if (phoneInput.value.length < 10) {
-        alert("Номер телефона должен содержать не менее 10 цифр.");
+        alert(
+            "Номер телефона должен содержать не менее 10 цифр."
+        );
         return;
     }
 
     // Если все проверки пройдены
-    alert("Спасибо, " + nameInput.value + "! Мы скоро с вами свяжемся.");
+    alert(
+        "Спасибо, " +
+            nameInput.value +
+            "! Мы скоро с вами свяжемся."
+    );
     modal.style.display = "none"; // Закрываем модальное окно после отправки
     callbackForm.reset(); // Очищаем форму
 });
 
 // Счетчик обратного отсчета
-const countdownDate = new Date("2025-03-15T00:00:00").getTime();
+const countdownDate = new Date(
+    "2025-03-15T00:00:00"
+).getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
     const distance = countdownDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
     );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+    );
 
-    document.getElementById("days").innerText = String(days).padStart(2, "0");
-    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-    document.getElementById("minutes").innerText = String(minutes).padStart(
-        2,
-        "0"
-    );
-    document.getElementById("seconds").innerText = String(seconds).padStart(
-        2,
-        "0"
-    );
+    document.getElementById("days").innerText = String(
+        days
+    ).padStart(2, "0");
+    document.getElementById("hours").innerText = String(
+        hours
+    ).padStart(2, "0");
+    document.getElementById("minutes").innerText = String(
+        minutes
+    ).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(
+        seconds
+    ).padStart(2, "0");
 
     if (distance < 0) {
         clearInterval(interval);
@@ -363,177 +452,6 @@ const interval = setInterval(updateCountdown, 1000);
 updateCountdown();
 // Акция конец
 
-//котировки - бегущая строка
-const optionsMarqueeItem = document.querySelector(
-    ".options__marquee_item"
-);
-const optionsMarquee = document.querySelector(
-    ".options__marquee"
-);
-const optionsMarqueeDouble = document.getElementById(
-    "options__marquee_double"
-);
-function getOptionValue(ticker) {
-    const optionUrl = `https://iss.moex.com/iss/engines/stock/markets/shares/securities/${ticker}.json?iss.meta=off`;
-    fetch(optionUrl)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            let optionsMarqueeContainer =
-                document.createElement("div");
-            optionsMarqueeContainer.classList.add(
-                "options__marquee_item"
-            );
-            optionsMarquee.appendChild(
-                optionsMarqueeContainer
-            );
-            optionsMarqueeContainer.textContent =
-                ticker +
-                ": " +
-                data.marketdata.data[1][12].toFixed(2);
-            const clone =
-                optionsMarqueeContainer.cloneNode(true);
-            optionsMarqueeDouble.appendChild(clone);
-        })
-        .catch((error) => {
-            console.error(
-                "Ошибка при загрузке данных:",
-                error
-            );
-            optionsMarquee.textContent =
-                "Произошла ошибка при загрузке данных";
-        });
-}
-function getOptionValue2(ticker2) {
-    const optionUrl2 = `https://iss.moex.com/iss/engines/stock/markets/shares/securities/${ticker2}.json?iss.meta=off`;
-    fetch(optionUrl2)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            let optionsMarqueeContainer =
-                document.createElement("div");
-            optionsMarqueeContainer.classList.add(
-                "options__marquee_item"
-            );
-            optionsMarquee.appendChild(
-                optionsMarqueeContainer
-            );
-            optionsMarqueeContainer.textContent =
-                ticker2 +
-                ": " +
-                data.marketdata.data[2][12].toFixed(2);
-            const clone =
-                optionsMarqueeContainer.cloneNode(true);
-            optionsMarqueeDouble.appendChild(clone);
-        })
-        .catch((error) => {
-            console.error(
-                "Ошибка при загрузке данных:",
-                error
-            );
-            optionsMarquee.textContent =
-                "Произошла ошибка при загрузке данных";
-        });
-}
-const tickers = ["TATN", "CHMF", "PLZL", "LKOH", "YDEX"];
-for (let ticker of tickers) {
-    //console.log(ticker);
-    getOptionValue(ticker);
-}
-const tickers2 = ["SNGSP", "MTSS", "GMKN", "SBER", "GAZP"];
-for (let ticker2 of tickers2) {
-    //console.log(ticker2);
-    getOptionValue2(ticker2);
-}
-
-//котировки - графики
-const optionsChart = document.querySelector(
-    ".options__chart"
-);
-const currentDate = new Date();
-let currentDateString = currentDate
-    .toISOString()
-    .split("T")[0];
-function getOptionHistory(ticker, currentDateString) {
-    const optionHistoryUrl = `https://iss.moex.com/iss/history/engines/stock/markets/shares/boards/tqbr/securities/${ticker}.json?from=2024-11-25&till=${currentDateString}}`;
-    fetch(optionHistoryUrl)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            const arrayOptionHistoryDates = [];
-            const arrayOptionHistoryPrices = [];
-            let i = 0;
-            while (i < data.history.data.length) {
-                let historyDate = data.history.data[i++][1];
-                arrayOptionHistoryDates.push(historyDate);
-            }
-            let k = 0;
-            while (k < data.history.data.length) {
-                let historyPrice =
-                    data.history.data[k++][13];
-                arrayOptionHistoryPrices.push(historyPrice);
-            }
-
-            let optionCanvas =
-                document.createElement("canvas");
-            optionCanvas.classList.add(
-                "options__chart_item"
-            );
-            optionsChart.appendChild(optionCanvas);
-            const dateData = {
-                labels: arrayOptionHistoryDates,
-                datasets: [
-                    {
-                        label: `${ticker} (RUB)`,
-                        data: arrayOptionHistoryPrices,
-                        lineTension: 0,
-                        fill: false,
-                        borderColor: "coral",
-                        backgroundColor: "transparent",
-                        borderDash: [1, 0],
-                        pointBorderColor: "coral",
-                        pointBackgroundColor: "grey",
-                        pointRadius: 2,
-                        pointHoverRadius: 10,
-                        pointHitRadius: 30,
-                        pointBorderWidth: 2,
-                        pointStyle: "rectRounded",
-                    },
-                ],
-            };
-            console.log(dateData[1]);
-            const chartOptions = {
-                legend: {
-                    display: true,
-                    position: "top",
-                    labels: {
-                        boxWidth: 80,
-                        fontColor: "black",
-                    },
-                },
-            };
-            new Chart(optionCanvas, {
-                type: "line",
-                data: dateData,
-                options: chartOptions,
-            });
-        })
-        .catch((error) => {
-            console.error(
-                "Ошибка при загрузке данных:",
-                error
-            );
-            optionsChart.textContent =
-                "Произошла ошибка при загрузке данных";
-        });
-}
-for (let ticker of tickers) {
-    getOptionHistory(ticker);
-}
-
 // Погода
 async function fetchWeather() {
     const apiKey = "b5ffa9621e29ee2e42f640bc8a5fe6ae";
@@ -543,14 +461,17 @@ async function fetchWeather() {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        document.getElementById("weather-info").innerHTML = `
+        document.getElementById(
+            "weather-info"
+        ).innerHTML = `
       <p>${data.name}: ${data.weather[0].description}</p>
       <p>Температура: ${data.main.temp}°C</p>
       <p>Влажность: ${data.main.humidity}%</p>
     `;
     } catch (error) {
-        document.getElementById("weather-info").textContent =
-            "Ошибка загрузки погоды";
+        document.getElementById(
+            "weather-info"
+        ).textContent = "Ошибка загрузки погоды";
     }
 }
 fetchWeather();
