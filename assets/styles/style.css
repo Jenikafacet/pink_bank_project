@@ -432,7 +432,7 @@ td.today {
 }
 .exchange-rates__wrapper {
     display: grid;
-    grid-template-rows: repeat 4, 20px;
+    grid-template-rows: repeat 5, 20px;
     grid-template-columns: repeat 3, 1fr;
     align-items: start;
 }
@@ -502,6 +502,23 @@ td.today {
 }
 .exchange-rates__item3_trend {
     grid-row: 4/5;
+    grid-column: 3/4;
+    color: green;
+    border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item4_name {
+    grid-row: 5/6;
+    grid-column: 1/2;
+    border-bottom: 2px solid #968e8e;
+    padding-left: 5px;
+}
+.exchange-rates__item4_value {
+    grid-row: 5/6;
+    grid-column: 2/3;
+    border-bottom: 2px solid #968e8e;
+}
+.exchange-rates__item4_trend {
+    grid-row: 5/6;
     grid-column: 3/4;
     color: green;
     border-bottom: 2px solid #968e8e;

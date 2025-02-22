@@ -375,7 +375,7 @@ td.today
     margin-bottom: 10px
     &__wrapper
         display: grid
-        grid-template-rows: repeat (4, 20px)
+        grid-template-rows: repeat (5, 20px)
         grid-template-columns: repeat (3, 1fr)
         align-items: start
     &__title_name
@@ -433,6 +433,20 @@ td.today
         border-bottom: 2px solid $additional-color
     &__item3_trend
         grid-row: 4 / 5
+        grid-column: 3 / 4
+        color: green
+        border-bottom: 2px solid $additional-color
+    &__item4_name
+        grid-row: 5 / 6
+        grid-column: 1 / 2
+        border-bottom: 2px solid $additional-color
+        padding-left: 5px
+    &__item4_value
+        grid-row: 5 / 6
+        grid-column: 2 / 3
+        border-bottom: 2px solid $additional-color
+    &__item4_trend
+        grid-row: 5 / 6
         grid-column: 3 / 4
         color: green
         border-bottom: 2px solid $additional-color

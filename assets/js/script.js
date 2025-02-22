@@ -228,6 +228,10 @@ fetch("https://www.cbr-xml-daily.ru/daily_json.js")
             ".exchange-rates__item3_value"
         ).textContent =
             data.Valute.GBP.Value.toFixed(2) + " RUB";
+        document.querySelector(
+            ".exchange-rates__item4_value"
+        ).textContent =
+            data.Valute.CNY.Value.toFixed(2) + " RUB";
 
         function updateTrend(element, margin) {
             element.innerHTML =
@@ -254,6 +258,12 @@ fetch("https://www.cbr-xml-daily.ru/daily_json.js")
                 ".exchange-rates__item3_trend"
             ),
             data.Valute.GBP.Value - data.Valute.GBP.Previous
+        );
+        updateTrend(
+            document.querySelector(
+                ".exchange-rates__item4_trend"
+            ),
+            data.Valute.CNY.Value - data.Valute.CNY.Previous
         );
     })
     .catch((error) => {
