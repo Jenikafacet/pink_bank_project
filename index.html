@@ -2,15 +2,32 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
         <title>Pink Bank – Girls Friendly</title>
-        <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg" />
-        <link rel="stylesheet" href="/assets/styles/reset.css" />
-        <link rel="stylesheet" href="/assets/styles/normalize.css" />
-        <link href="assets/styles/bootstrap.min.css" rel="stylesheet" />
-        <!-- Подключение owl carousel для слайдера -->
-        <link rel="stylesheet" href="/assets/styles/owl.carousel.min.css" />
-        <link rel="stylesheet" href="/assets/styles/style.css" />
+        <link
+            rel="shortcut icon"
+            href="/assets/images/favicon.svg"
+            type="image/svg"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/reset.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/normalize.css"
+        />
+        <link
+            href="assets/styles/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="/assets/styles/style.css"
+        />
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     </head>
@@ -26,7 +43,9 @@
                     <div class="menu">
                         <a href="#news">Личный кабинет</a>
                         <a href="#services">Сервисы</a>
-                        <a href="#feedback">Обратная связь</a>
+                        <a href="#feedback"
+                            >Обратная связь</a
+                        >
                     </div>
                 </nav>
             </div>
@@ -36,12 +55,25 @@
         <div class="banner-wrapper">
             <div class="banner">
                 <div class="titles">
-                    <h2 class="big-title">Girls friendly Pink Bank</h2>
-                    <h2 class="big-title">Твои финансы - твои правила!</h2>
-                    <p class="small-title">Присоединяйся к банку, который понимает тебя</p>
+                    <h2 class="big-title">
+                        Girls friendly Pink Bank
+                    </h2>
+                    <h2 class="big-title">
+                        Твои финансы - твои правила!
+                    </h2>
+                    <p class="small-title">
+                        Присоединяйся к банку, который
+                        понимает тебя
+                    </p>
                     <form>
-                        <input type="email" placeholder="Введите ваш email" required />
-                        <button type="submit">Подписаться</button>
+                        <input
+                            type="email"
+                            placeholder="Введите ваш email"
+                            required
+                        />
+                        <button type="submit">
+                            Подписаться
+                        </button>
                     </form>
                 </div>
             </div>
@@ -49,8 +81,15 @@
 
         <!-- Котировки -->
         <div class="options__marquee_wrapper">
-            <div class="options__marquee marquee" id="options__marquee_main"></div>
-            <div aria-hidden="true" class="options__marquee marquee" id="options__marquee_double"></div>
+            <div
+                class="options__marquee marquee"
+                id="options__marquee_main"
+            ></div>
+            <div
+                aria-hidden="true"
+                class="options__marquee marquee"
+                id="options__marquee_double"
+            ></div>
         </div>
 
         <!-- Основной контент -->
@@ -64,51 +103,119 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <h2 class="options__title">Динамика акций "Голубых фишек" на Московской Бирже</h2>
+                                    <h2
+                                        class="options__title"
+                                    >
+                                        Динамика акций
+                                        "Голубых фишек" на
+                                        Московской Бирже
+                                    </h2>
                                 </div>
                                 <div class="col-12">
-                                    <div class="options__carousel_wrapper">
-                                        <div class="options__chart owl-carousel"></div>
+                                    <div
+                                        class="options__chart_wrapper"
+                                    >
+                                        <div
+                                            class="options__chart"
+                                        ></div>
+                                        <div
+                                            class="options__buttons_container"
+                                        >
+                                            <button
+                                                class="options__prev_btn button"
+                                            >
+                                            &#9668
+                                            </button>
+                                            <button
+                                                class="options__next_btn button"
+                                            >
+                                            &#9658
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!-- Услуга 1 -->
                     <h3>Онлайн сервисы</h3>
                     <div class="service">
-                        <div class="image-container-currency">
-                            <img src="/assets/images/money.png" alt="Валютные операции" />
+                        <div
+                            class="image-container-currency"
+                        >
+                            <img
+                                src="/assets/images/money.png"
+                                alt="Валютные операции"
+                            />
                         </div>
                         <div class="currency-calc">
                             <!-- <h2>Валютные операции</h2> -->
                             <p>Валютный калькулятор</p>
                             <div class="input-group">
-                                <label for="amount">Сумма</label>
-                                <input type="number" id="amount" placeholder="Введите сумму" />
+                                <label for="amount"
+                                    >Сумма</label
+                                >
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    placeholder="Введите сумму"
+                                />
                             </div>
                             <div class="input-group">
-                                <label for="fromCurrency">Из валюты</label>
+                                <label for="fromCurrency"
+                                    >Из валюты</label
+                                >
                                 <select id="fromCurrency">
-                                    <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="GBP">GBP</option>
-                                    <option value="JPY">JPY</option>
-                                    <option value="RUB">RUB</option>
+                                    <option value="USD">
+                                        USD
+                                    </option>
+                                    <option value="EUR">
+                                        EUR
+                                    </option>
+                                    <option value="GBP">
+                                        GBP
+                                    </option>
+                                    <option value="JPY">
+                                        JPY
+                                    </option>
+                                    <option value="RUB">
+                                        RUB
+                                    </option>
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label for="toCurrency">В валюту</label>
+                                <label for="toCurrency"
+                                    >В валюту</label
+                                >
                                 <select id="toCurrency">
-                                    <option value="EUR">EUR</option>
-                                    <option value="USD">USD</option>
-                                    <option value="GBP">GBP</option>
-                                    <option value="JPY">JPY</option>
-                                    <option value="RUB">RUB</option>
+                                    <option value="EUR">
+                                        EUR
+                                    </option>
+                                    <option value="USD">
+                                        USD
+                                    </option>
+                                    <option value="GBP">
+                                        GBP
+                                    </option>
+                                    <option value="JPY">
+                                        JPY
+                                    </option>
+                                    <option value="RUB">
+                                        RUB
+                                    </option>
                                 </select>
                             </div>
-                            <button class="button" onclick="convertCurrency()">Конвертировать</button>
-                            <div class="currency-result-card" id="currency-result-card">
+                            <button
+                                class="button"
+                                onclick="convertCurrency()"
+                            >
+                                Конвертировать
+                            </button>
+                            <div
+                                class="currency-result-card"
+                                id="currency-result-card"
+                            >
                                 <p id="currency-result"></p>
                             </div>
                         </div>
@@ -118,46 +225,89 @@
                     <div class="service">
                         <div class="invest-calc">
                             <!-- <h2>Инвестиционные продукты</h2> -->
-                            <p>Калькулятор доходности акций</p>
+                            <p>
+                                Калькулятор доходности акций
+                            </p>
                             <div class="input-group">
-                                <label for="start-price">Стартовая цена акции:</label>
-                                <input type="number" id="start-price" placeholder="Введите стартовую цену" />
+                                <label for="start-price"
+                                    >Стартовая цена
+                                    акции:</label
+                                >
+                                <input
+                                    type="number"
+                                    id="start-price"
+                                    placeholder="Введите стартовую цену"
+                                />
                             </div>
                             <div class="input-group">
-                                <label for="current-price">Текущая цена акции:</label>
-                                <input type="number" id="current-price" placeholder="Введите текущую цену" />
+                                <label for="current-price"
+                                    >Текущая цена
+                                    акции:</label
+                                >
+                                <input
+                                    type="number"
+                                    id="current-price"
+                                    placeholder="Введите текущую цену"
+                                />
                             </div>
                             <div class="input-group">
-                                <label for="shares">Количество акций:</label>
-                                <input type="number" id="shares" placeholder="Введите количество акций" />
+                                <label for="shares"
+                                    >Количество
+                                    акций:</label
+                                >
+                                <input
+                                    type="number"
+                                    id="shares"
+                                    placeholder="Введите количество акций"
+                                />
                             </div>
                             <div class="input-group">
-                                <label for="dividends">Дивиденды (если есть):</label>
+                                <label for="dividends"
+                                    >Дивиденды (если
+                                    есть):</label
+                                >
                                 <input
                                     type="number"
                                     id="dividends"
                                     placeholder="оставьте поле пустым, если дивидентов нет"
                                 />
                             </div>
-                            <button class="button" id="calculate-button">Рассчитать</button>
+                            <button
+                                class="button"
+                                id="calculate-button"
+                            >
+                                Рассчитать
+                            </button>
 
-                            <div class="result-card" id="result-card">
+                            <div
+                                class="result-card"
+                                id="result-card"
+                            >
                                 <h3>Результаты:</h3>
                                 <p id="current-value"></p>
                                 <p id="profit-loss"></p>
                             </div>
                         </div>
                         <div class="image-container">
-                            <img src="/assets/images/banking.png" alt="Акции" />
+                            <img
+                                src="/assets/images/banking.png"
+                                alt="Акции"
+                            />
                         </div>
                     </div>
 
                     <!-- Услуга 3 -->
                     <div class="service">
-                        <img src="/assets/images/invest.png" alt="Услуга 3" />
+                        <img
+                            src="/assets/images/invest.png"
+                            alt="Услуга 3"
+                        />
                         <div class="service-content">
                             <div class="formWrapper">
-                                <p class="callUs">Закажите консультацию по инвестициям</p>
+                                <p class="callUs">
+                                    Закажите консультацию по
+                                    инвестициям
+                                </p>
                                 <input
                                     id="inputName"
                                     class="input"
@@ -166,7 +316,10 @@
                                     required
                                     minlength="2"
                                 />
-                                <p class="error" id="nameError"></p>
+                                <p
+                                    class="error"
+                                    id="nameError"
+                                ></p>
                                 <input
                                     id="inputEmail"
                                     class="input"
@@ -175,7 +328,10 @@
                                     placeholder="Введите вашу почту*"
                                     required
                                 />
-                                <p class="error" id="emailError"></p>
+                                <p
+                                    class="error"
+                                    id="emailError"
+                                ></p>
                                 <input
                                     id="inputNumber"
                                     class="input"
@@ -184,8 +340,16 @@
                                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{8}"
                                     required
                                 />
-                                <p class="error" id="numberError"></p>
-                                <button id="submitButton" class="button form-button" type="submit" disabled>
+                                <p
+                                    class="error"
+                                    id="numberError"
+                                ></p>
+                                <button
+                                    id="submitButton"
+                                    class="button form-button"
+                                    type="submit"
+                                    disabled
+                                >
                                     Отправить
                                 </button>
                             </div>
@@ -195,15 +359,27 @@
 
                 <!-- Опрос про инвестиции -->
                 <div class="quiz">
-                    <h2 class="quiz__title">Узнайте, куда сейчас лучше инвестировать</h2>
+                    <h2 class="quiz__title">
+                        Узнайте, куда сейчас лучше
+                        инвестировать
+                    </h2>
                     <p class="quiz__description">
-                        Пройдите тест, который поможет определить, какие активы рассмотреть для вложения денег, и
-                        составит ваш персонализированный инвестиционный портфель.
+                        Пройдите тест, который поможет
+                        определить, какие активы рассмотреть
+                        для вложения денег, и составит ваш
+                        персонализированный инвестиционный
+                        портфель.
                     </p>
                     <form>
                         <fieldset></fieldset>
                         <div>
-                            <button type="button" id="quiz_button" onclick="calculateResult()">Пройти опрос</button>
+                            <button
+                                type="button"
+                                id="quiz_button"
+                                onclick="calculateResult()"
+                            >
+                                Пройти опрос
+                            </button>
                             <p id="notSelected"></p>
                         </div>
                     </form>
@@ -214,24 +390,72 @@
             <div class="sidebar">
                 <!-- Курс валют -->
                 <div class="exchange-rates">
-                    <h2 class="sidebar_header">Курсы валют</h2>
-                    <div class="exchange-rates__error"></div>
+                    <h2 class="sidebar_header">
+                        Курсы валют
+                    </h2>
+                    <div
+                        class="exchange-rates__error"
+                    ></div>
                     <div class="exchange-rates__wrapper">
-                        <div class="exchange-rates__title_name">Валюта</div>
-                        <div class="exchange-rates__title_value">Курс</div>
-                        <div class="exchange-rates__title_trend">Тренд</div>
-                        <div class="exchange-rates__item1_name">USD</div>
-                        <div class="exchange-rates__item1_value"></div>
-                        <div class="exchange-rates__item1_trend"></div>
-                        <div class="exchange-rates__item2_name">EUR</div>
-                        <div class="exchange-rates__item2_value"></div>
-                        <div class="exchange-rates__item2_trend"></div>
-                        <div class="exchange-rates__item3_name">GBP</div>
-                        <div class="exchange-rates__item3_value"></div>
-                        <div class="exchange-rates__item3_trend"></div>
-                        <div class="exchange-rates__item4_name">CNY</div>
-                        <div class="exchange-rates__item4_value"></div>
-                        <div class="exchange-rates__item4_trend"></div>
+                        <div
+                            class="exchange-rates__title_name"
+                        >
+                            Валюта
+                        </div>
+                        <div
+                            class="exchange-rates__title_value"
+                        >
+                            Курс
+                        </div>
+                        <div
+                            class="exchange-rates__title_trend"
+                        >
+                            Тренд
+                        </div>
+                        <div
+                            class="exchange-rates__item1_name"
+                        >
+                            USD
+                        </div>
+                        <div
+                            class="exchange-rates__item1_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item1_trend"
+                        ></div>
+                        <div
+                            class="exchange-rates__item2_name"
+                        >
+                            EUR
+                        </div>
+                        <div
+                            class="exchange-rates__item2_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item2_trend"
+                        ></div>
+                        <div
+                            class="exchange-rates__item3_name"
+                        >
+                            GBP
+                        </div>
+                        <div
+                            class="exchange-rates__item3_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item3_trend"
+                        ></div>
+                        <div
+                            class="exchange-rates__item4_name"
+                        >
+                            CNY
+                        </div>
+                        <div
+                            class="exchange-rates__item4_value"
+                        ></div>
+                        <div
+                            class="exchange-rates__item4_trend"
+                        ></div>
                     </div>
                     <div class="exchange-rates__date"></div>
                 </div>
@@ -246,10 +470,16 @@
                 </div> -->
                 <!-- Простой календарь -->
                 <div class="calendar">
-                    <h2 class="sidebar_header">Календарь</h2>
+                    <h2 class="sidebar_header">
+                        Календарь
+                    </h2>
                     <div class="calendar-wrapper">
-                        <button id="btnPrev" type="button">Предыдущий</button>
-                        <button id="btnNext" type="button">Следующий</button>
+                        <button id="btnPrev" type="button">
+                            Предыдущий
+                        </button>
+                        <button id="btnNext" type="button">
+                            Следующий
+                        </button>
                         <div id="divCal"></div>
                     </div>
                 </div>
@@ -264,35 +494,60 @@
         <!-- Акция -->
         <div class="promotion">
             <h2>«Стартуй уверенно! 🚀</h2>
-            <p>Получи до 5000 ₽ стартового бонуса при открытии счета до 15.03.2025</p>
+            <p>
+                Получи до 5000 ₽ стартового бонуса при
+                открытии счета до 15.03.2025
+            </p>
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
                     <span id="days">00</span>
-                    <span class="countdown-label">дней</span>
+                    <span class="countdown-label"
+                        >дней</span
+                    >
                 </div>
                 <div class="countdown-item">
                     <span id="hours">00</span>
-                    <span class="countdown-label">часов</span>
+                    <span class="countdown-label"
+                        >часов</span
+                    >
                 </div>
                 <div class="countdown-item">
                     <span id="minutes">00</span>
-                    <span class="countdown-label">минут</span>
+                    <span class="countdown-label"
+                        >минут</span
+                    >
                 </div>
                 <div class="countdown-item">
                     <span id="seconds">00</span>
-                    <span class="countdown-label">секунд</span>
+                    <span class="countdown-label"
+                        >секунд</span
+                    >
                 </div>
             </div>
-            <button class="cta-button" id="openModalBtn">Заказать звонок</button>
+            <button class="cta-button" id="openModalBtn">
+                Заказать звонок
+            </button>
         </div>
         <!-- Модальное окно -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close" id="closeModalBtn">&times;</span>
+                <span class="close" id="closeModalBtn"
+                    >&times;</span
+                >
                 <h2>Заявка на перезвон</h2>
                 <form id="callbackForm">
-                    <input type="text" id="name" placeholder="Имя и фамилия" required />
-                    <input type="tel" id="phone" placeholder="Номер телефона" required />
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Имя и фамилия"
+                        required
+                    />
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Номер телефона"
+                        required
+                    />
                     <button type="submit">Отправить</button>
                 </form>
             </div>
@@ -300,10 +555,10 @@
 
         <!-- Подвал -->
         <footer>
-            <div>&copy; 2025 Pink Bank. Все права защищены.</div>
+            <div>
+                &copy; 2025 Pink Bank. Все права защищены.
+            </div>
         </footer>
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/options.js"></script>
         <script src="assets/js/form.js"></script>
