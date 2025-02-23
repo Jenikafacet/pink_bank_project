@@ -8,6 +8,7 @@ const optionsMarquee = document.querySelector(
 const optionsMarqueeDouble = document.getElementById(
     "options__marquee_double"
 );
+
 function getOptionValue(ticker) {
     const optionUrl = `https://iss.moex.com/iss/engines/stock/markets/shares/securities/${ticker}.json?iss.meta=off`;
     fetch(optionUrl)
@@ -74,12 +75,10 @@ function getOptionValue2(ticker2) {
 }
 const tickers = ["TATN", "CHMF", "PLZL", "LKOH", "YDEX"];
 for (let ticker of tickers) {
-    //console.log(ticker);
     getOptionValue(ticker);
 }
 const tickers2 = ["SNGSP", "MTSS", "GMKN", "SBER", "GAZP"];
 for (let ticker2 of tickers2) {
-    //console.log(ticker2);
     getOptionValue2(ticker2);
 }
 
@@ -124,21 +123,12 @@ function getOptionHistory(tickerBest, currentDateString) {
                 arrayOptionHistoryPrices.push(historyPrice);
             }
 
-            let optionsCarouselItem =
-                document.createElement("div");
-            optionsCarouselItem.classList.add(
-                "options__carousel_item"
-            );
-            optionsCarouselItem.classList.add("item");
-
             let optionCanvas =
                 document.createElement("canvas");
             optionCanvas.classList.add(
                 "options__chart_item"
             );
-
-            optionsCarouselItem.append(optionCanvas);
-            optionsChart.prepend(optionsCarouselItem);
+            optionsChart.prepend(optionCanvas);
 
             const dateData = {
                 labels: arrayOptionHistoryDates,
@@ -177,9 +167,6 @@ function getOptionHistory(tickerBest, currentDateString) {
                 data: dateData,
                 options: chartOptions,
             });
-            let optionCanvasArray = [];
-            optionCanvasArray.push(optionCanvas);
-            console.log(optionCanvasArray);
         })
         .catch((error) => {
             console.error(
@@ -195,24 +182,36 @@ for (let tickerBest of tickersBest) {
     getOptionHistory(tickerBest);
 }
 
-$(document).ready(function () {
+const optionsPrevBtn = document.querySelector(
+    ".options__prev_btn"
+);
+const optionsNextBtn = document.querySelector(
+    ".options__next_btn"
+);
+function createChartsCarusel() {
     setTimeout(function () {
-        $(".options__chart.owl-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                767: {
-                    items: 2,
-                },
-                991: {
-                    items: 2,
-                },
-            },
+        const optionsChartItems = document.querySelectorAll(
+            ".options__chart_item"
+        );
+        let index = 0;
+        function showChart() {
+            if (index >= optionsChartItems.length)
+                index = 0;
+            if (index < 0)
+                index = optionsChartItems.length - 1;
+            optionsChart.style.transform = `translateX(-${
+                index * 50
+            }%)`;
+        }
+        //добавление слушателей на кнопки
+        optionsNextBtn.addEventListener("click", () => {
+            index++;
+            showChart();
         });
-    }, 1000);
-});
+        optionsPrevBtn.addEventListener("click", () => {
+            index--;
+            showChart();
+        });
+    }, 3000);
+}
+createChartsCarusel();
