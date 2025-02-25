@@ -8,7 +8,7 @@ fetch(
     })
     .then((data) => {
         console.log(data);
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
             let newsItem = document.createElement("li");
             newsList.appendChild(newsItem);
             let newsItemLink = document.createElement("a");
@@ -199,9 +199,9 @@ async function convertCurrency() {
         const rate = data.rates[toCurrency];
         const convertedAmount = (amount * rate).toFixed(2);
 
-        document.getElementById(
-            "currency-result"
-        ).innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        document.getElementById("currency-result").innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        const resultCard = document.getElementById("currency-result-card")
+        resultCard.style.display = "block"
     } catch (error) {
         alert(
             "Ошибка при получении курса валют. Попробуйте позже."

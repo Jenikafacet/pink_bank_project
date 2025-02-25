@@ -162,7 +162,7 @@ h3
     text-align: center
     font-size: 1.2rem
 
-.image-containerб
+.image-container,
 .image-container-currency
     width: 45%
     align-items: stretch
@@ -249,16 +249,13 @@ h3
     font-size: 16px
 
 .currency-result-card
-    display: none 
-    /* margin-top: $margin-top */
-    /* padding: $padding */
+    display: none
+    margin-top: 20px
+    padding: 15px
     background-color: #ffffff
-    /* border-radius: $border-radius */
-    /* box-shadow: 0 4px 8px $shadow-color */
     color: #333
-    /* font-size: $font-size */
 
-.currency-result-card p 
+.currency-result-card p
     margin: 0
     font-size: 16px
 
@@ -292,12 +289,12 @@ li
     padding: 7px 0 7px 5px
 
 ul
-    padding-left: 10px
-    padding-right: 10px
+    padding-left: 5px
+    padding-right: 5px
 
 .calendar-wrapper
     max-width: 360px
-    margin: 3em auto
+    margin: 1em auto
     padding: 2em
     border: 1px solid #dcdcff
     border-radius: 5px
@@ -452,7 +449,7 @@ td.today
         font-size: 12px
 
 /* Погода */
-.weather-summary 
+.weather-summary
     width: 100%
     max-width: 400px
     margin: 0 auto
@@ -461,23 +458,24 @@ td.today
     border-radius: 8px
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
 
-
-.weather-summary h2 
+.weather-summary h2
     text-align: center
     font-size: 24px
     margin-bottom: 20px
 
-.weather-info 
+.weather-info
     text-align: center
+    margin: 20px
+    padding-left: 20px
+    font-size: 24px
 
-.weather-info img 
+.weather-info img
     width: 50px
     height: 50px
 
-.weather-info p 
-    margin: 10px 0
+.weather-info p
+    margin: 20px
     font-size: 18px
-
 
     /* Стили для акции */
 .promotion
@@ -610,7 +608,6 @@ td.today
     display: flex
     flex-direction: column
     align-items: center
-    margin-bottom: 30px
     background-color: white
     border-radius: 10px
     overflow: hidden
@@ -645,7 +642,6 @@ fieldset
     &>legend
         padding-bottom: 15px
         font-size: 1.5rem
-
 
 /* Для бегущей строки с котировками акций*/
 .marquee
@@ -685,7 +681,6 @@ fieldset
     to
         transform: translateX(calc(-100% - 20px))
 
-
 /* Для карусели с графиками котировок акций */
 .options
     &__chart
@@ -708,22 +703,21 @@ fieldset
         &:hover
             background-color: white
             color: #fa2e99
-    &__next_btn    
+    &__next_btn
         max-width: 45px
         background-color: white
         color: #ff99cb
         &:hover
             background-color: white
             color: #fa2e99
-    &__buttons_container  
+    &__buttons_container
         display: flex
         justify-content: center
     &__title
         font-size: 1.75rem
         font-weight: 700
-        margin-bottom: 30px 
-        text-align: center 
-           
+        margin-bottom: 30px
+        text-align: center
 
 footer
     font-size: 0.9rem
@@ -738,7 +732,6 @@ footer
 .callUs
     min-width: 200px
     margin: 10px
-
 
 .input
     margin: 5px
@@ -779,15 +772,15 @@ footer
     align-items: center
 
 @media screen and (max-width: 1040px)
-    .main-content 
+    .main-content
         width: 65%
-    .sidebar 
+    .sidebar
         width: 35%
     .options__chart_item
-        max-width: 100%    
+        max-width: 100%
 
-@media screen and (max-width: 767px) 
-    .main-content 
+@media screen and (max-width: 767px)
+    .main-content
         width: 50%
     .service img,
     .image-container,
@@ -798,12 +791,11 @@ footer
         width: 100%
         padding: 0
         box-shadow: none
-        margin-right:0
-    
-    
-    .sidebar 
+        margin-right: 0
+
+    .sidebar
         width: 50%
-    .calendar 
+    .calendar
         width: 100%
 
 @media screen and (max-width: 600px)
@@ -813,28 +805,28 @@ footer
         font-size: 1rem
     h1
         font-size: 1.1rem
-    .menu 
+    .menu
         gap: 10px
         font-size: 0.5rem
     nav a
         font-size: 16px
-    .service 
+    .service
         margin-bottom: 20px
 
 @media screen and (max-width: 500px)
 
-    .main-container 
-        flex-direction: column 
-        gap: 10px 
+    .main-container
+        flex-direction: column
+        gap: 10px
     .main-content
         width: 100%
     .sidebar
         width: 100%
     nav
         align-items: center
-    .menu 
+    .menu
         display: none
-    .menu.active 
+    .menu.active
         display: flex
         width: 100px
         padding: 10px
@@ -850,7 +842,7 @@ footer
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3)
     nav a
         color: black
-    .burger 
+    .burger
         display: block
     .banner
         display: flex
@@ -858,7 +850,7 @@ footer
         margin-bottom: 20px
         padding: 10px 20px
     .big-title
-        font-size: 1rem 
+        font-size: 1rem
     .small-title
         font-size: 16px
         display: block
