@@ -4,7 +4,8 @@ const inputName = document.getElementById('inputName')
 const inputEmail = document.getElementById('inputEmail')
 const inputNumber = document.getElementById('inputNumber')
 const button = document.getElementById('submitButton')
-const form = document.querySelector('.formWrapper')
+// const form = document.querySelector('.formWrapper')
+const form2 = document.querySelector('.form2')
 
 const userNameError = document.getElementById('nameError');
 const emailError = document.getElementById('emailError');
@@ -18,6 +19,8 @@ let emailInputError = true;
 let userInputError = true;
 let numberInputError = true;
 
+let resultText = document.getElementById("resultText");
+
 const checkError = () => {
     console.log(emailInputError && userInputError && numberInputError);
 
@@ -26,7 +29,7 @@ const checkError = () => {
         userNameError.style.display = "none";
         emailError.style.display = "none";
         numberError.style.display = "none";
-    }
+        }
 };
 
 
@@ -79,17 +82,18 @@ button.addEventListener("click", function (event) {
         name: inputName.value,
         email: inputEmail.value,
         number: inputNumber.value
-    };
+        }
 
 fetchPost(putData)
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
-        let result = document.createElement("p");
-        result.classList.add("result");
-        result.innerText = 'Заявка отправлена'
-        form.append(result)
-        form.reset()
+        // let result = document.createElement("p");
+        // result.classList.add("result");
+        // result.innerText = 'Заявка отправлена'
+        // form.append(result)
+        resultText.innerText = 'Заявка отправлена'
+        form2.reset()
     }) 
     .catch((error) => (numberError.textContent = `${error}`));
     }  
