@@ -43,6 +43,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+.burger {
+  display: none;
+}
+
 .menu {
   display: flex;
   gap: 20px;
@@ -892,6 +896,13 @@ footer {
 }
 
 .formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
