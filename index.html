@@ -141,81 +141,37 @@
                     <!-- Услуга 1 -->
                     <h3>Онлайн сервисы</h3>
                     <div class="service">
-                        <div
-                            class="image-container-currency"
-                        >
-                            <img
-                                src="/assets/images/money.png"
-                                alt="Валютные операции"
-                            />
+                        <div class="image-container-currency">
+                            <img src="/assets/images/money.png" alt="Валютные операции" />
                         </div>
                         <div class="currency-calc">
-                            <!-- <h2>Валютные операции</h2> -->
                             <p>Валютный калькулятор</p>
                             <div class="input-group">
-                                <label for="amount"
-                                    >Сумма</label
-                                >
-                                <input
-                                    type="number"
-                                    id="amount"
-                                    placeholder="Введите сумму"
-                                />
+                                <label for="amount">Сумма</label>
+                                <input type="number" id="amount" placeholder="Введите сумму" />
                             </div>
                             <div class="input-group">
-                                <label for="fromCurrency"
-                                    >Из валюты</label
-                                >
+                                <label for="fromCurrency">Из валюты</label>
                                 <select id="fromCurrency">
-                                    <option value="USD">
-                                        USD
-                                    </option>
-                                    <option value="EUR">
-                                        EUR
-                                    </option>
-                                    <option value="GBP">
-                                        GBP
-                                    </option>
-                                    <option value="JPY">
-                                        JPY
-                                    </option>
-                                    <option value="RUB">
-                                        RUB
-                                    </option>
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="JPY">JPY</option>
+                                    <option value="RUB">RUB</option>
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label for="toCurrency"
-                                    >В валюту</label
-                                >
+                                <label for="toCurrency">В валюту</label>
                                 <select id="toCurrency">
-                                    <option value="EUR">
-                                        EUR
-                                    </option>
-                                    <option value="USD">
-                                        USD
-                                    </option>
-                                    <option value="GBP">
-                                        GBP
-                                    </option>
-                                    <option value="JPY">
-                                        JPY
-                                    </option>
-                                    <option value="RUB">
-                                        RUB
-                                    </option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD">USD</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="JPY">JPY</option>
+                                    <option value="RUB">RUB</option>
                                 </select>
                             </div>
-                            <button
-                                class="button"
-                                onclick="convertCurrency()"
-                            >
-                                Конвертировать
-                            </button>
-                            <div
-                                class="currency-result-card"
-                                id="currency-result-card"
-                            >
+                            <button class="button" onclick="convertCurrency()">Конвертировать</button>
+                            <div class="currency-result-card" id="currency-result-card">
                                 <p id="currency-result"></p>
                             </div>
                         </div>
@@ -357,22 +313,22 @@
                     </div>
                 </div>
 
-<!-- Опрос про инвестиции -->
-<div class="quiz">
-    <h2 class="quiz__title">Узнайте, куда сейчас лучше инвестировать</h2>
-    <p class="quiz__description">
-        Пройдите тест, который поможет определить, какие активы рассмотреть для вложения денег, и
-        составит ваш персонализированный инвестиционный портфель.
-    </p>
-    <form>
-        <fieldset></fieldset>
-        <div>
-            <button type="button" id="quiz_button" onclick="calculateResult()">Пройти опрос</button>
-            <p id="notSelected"></p>
-        </div>
-    </form>
-</div>
-</div>
+                <!-- Опрос про инвестиции -->
+                <div class="quiz">
+                    <h2 class="quiz__title">Узнайте, куда сейчас лучше инвестировать</h2>
+                    <p class="quiz__description">
+                        Пройдите тест, который поможет определить, какие активы рассмотреть для вложения денег, и
+                        составит ваш персонализированный инвестиционный портфель.
+                    </p>
+                    <form>
+                        <fieldset></fieldset>
+                        <div>
+                            <button type="button" id="quiz_button" onclick="calculateResult()">Пройти опрос</button>
+                            <p id="notSelected"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
             <!-- Сайдбар с правой стороны -->
             <div class="sidebar">
@@ -452,10 +408,6 @@
                     <h2 class="sidebar_header">Новости</h2>
                 </div>
                 <ul id="newsList"></ul>
-                <!-- Календарь инвестора -->
-                <!-- <div class="investor-calendar">
-                    <h2 class="sidebar_header">Календарь инвестора</h2>
-                </div> -->
                 <!-- Простой календарь -->
                 <div class="calendar">
                     <h2 class="sidebar_header">

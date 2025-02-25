@@ -190,6 +190,7 @@ h3 {
   font-size: 1.2rem;
 }
 
+.image-container,
 .image-container-currency {
   width: 45%;
   align-items: stretch;
@@ -291,13 +292,10 @@ h3 {
 
 .currency-result-card {
   display: none;
-  /* margin-top: $margin-top */
-  /* padding: $padding */
+  margin-top: 20px;
+  padding: 15px;
   background-color: #ffffff;
-  /* border-radius: $border-radius */
-  /* box-shadow: 0 4px 8px $shadow-color */
   color: #333;
-  /* font-size: $font-size */
 }
 
 .currency-result-card p {
@@ -341,13 +339,13 @@ li {
 }
 
 ul {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .calendar-wrapper {
   max-width: 360px;
-  margin: 3em auto;
+  margin: 1em auto;
   padding: 2em;
   border: 1px solid #dcdcff;
   border-radius: 5px;
@@ -551,6 +549,9 @@ td.today {
 
 .weather-info {
   text-align: center;
+  margin: 20px;
+  padding-left: 20px;
+  font-size: 24px;
 }
 
 .weather-info img {
@@ -559,7 +560,7 @@ td.today {
 }
 
 .weather-info p {
-  margin: 10px 0;
+  margin: 20px;
   font-size: 18px;
   /* Стили для акции */
 }
@@ -713,7 +714,6 @@ td.today {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
