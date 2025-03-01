@@ -871,22 +871,6 @@ footer {
   margin: 10px;
 }
 
-.input {
-  margin: 5px;
-  max-width: 350px;
-  min-width: 200px;
-  height: 40px;
-  font-size: 13px;
-  border-radius: 5px;
-}
-
-.form-button {
-  max-width: 200px;
-  min-width: 100px;
-  margin: 10px;
-  font-size: 15px;
-}
-
 #paragraph {
   display: flex;
   flex-direction: row;
@@ -899,7 +883,13 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  margin-left: 25px;
+}
+
+.input-form {
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .form2 {
